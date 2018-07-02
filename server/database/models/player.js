@@ -1,12 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var player = sequelize.define('player', {
+  var Player = sequelize.define('player', {
     organization: DataTypes.STRING,
     name: DataTypes.STRING,
     status: DataTypes.STRING
   }, {});
-  player.associate = function(models) {
+  Player.associate = function(models) {
     // associations can be defined here
+    Player.belongsToMany(models.Event, { through: models.EventPlayerRelation });
   };
-  return player;
+  return Player;
 };

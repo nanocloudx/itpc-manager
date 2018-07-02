@@ -1,0 +1,960 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08ADBD02C7AD29F0CF59E54D93E0AD1A /* Pods-YurufuwaManage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A21843678998383D1A2E389ACED49FF5 /* Pods-YurufuwaManage-dummy.m */; };
+		177CF5441FE8719BC59FBCD76E0DFA84 /* Pods-YurufuwaManageTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B1AD26AA0E90737685BB9E8E715BF40 /* Pods-YurufuwaManageTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FAC0E03946B66156FA270BBBA448BE9 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3787A88123BB633491C6EC3D438C95B6 /* Query.swift */; };
+		48EB51E9BFF6A3E8741410020B734BD1 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF4A1C3C63F972312062AA62F115C7 /* RequestError.swift */; };
+		4B2FB939A514FAA8824B6EB9A495D739 /* Pods-YurufuwaManage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1711A7BA6EA075B4959DF79ED9E61C /* Pods-YurufuwaManage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DE13CF454C991A6082CBA1CE4B776F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		77836C6C472566B8208403CEEB378D8E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DF2749615513BE24862363B1EF11B0 /* Task.swift */; };
+		899BB2995ABE3ECBECD58410E3C07CAB /* Gryphon-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F35284D71EBE771D86172196F1BE2E41 /* Gryphon-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C4A41F236AF08F698E9121B5A794A4F /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88440D64F796630EBF8602270164DFAC /* ConnectionError.swift */; };
+		8C5533E6E8239BD3841B7D9E27BBDB3B /* Pods-YurufuwaManageTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69331C37519C3E629E8DE0D128A18841 /* Pods-YurufuwaManageTests-dummy.m */; };
+		A61F5DE20280EE28B0270E52157A071A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		BF7C4269F85E6984815721BBECBF0A1F /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346FE93EFA02F8A70EFAF74A97E3FC44 /* Requestable.swift */; };
+		C229C32716CD61B4AB2B33FEBACDB323 /* Gryphon-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 496323ACA33F0B790BC571B997C6EFD0 /* Gryphon-dummy.m */; };
+		C559C4C61F75D3F8BBCBA8E97DB9CDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		DE887F553FAA38E1D5FB7D2B8C8A4A3D /* Pods-YurufuwaManageUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F0F7852C7B1190D071AC4E0453E35C /* Pods-YurufuwaManageUITests-dummy.m */; };
+		EB42653CE749BAE5959A7394E999758D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		FEDE38C78E6B53E07DC5EB395BBB1D5F /* Pods-YurufuwaManageUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF4463EC102B8E601FB44D200AF33E7 /* Pods-YurufuwaManageUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFBDBD8592745C4E53CAA35FA3CE69BF /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F344B326E607FD3DE4E7AC7B22617D3 /* ResponseError.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AE203AB2B7D600763790FDFE00FD8C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D7F9F7019C8EC432F1F6AA85A1B1170;
+			remoteInfo = "Pods-YurufuwaManage";
+		};
+		7678EE541BCC814CF3F58B803B7574FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D7F9F7019C8EC432F1F6AA85A1B1170;
+			remoteInfo = "Pods-YurufuwaManage";
+		};
+		960832134CC9C38574159DE25D81412D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E44E0E3536AA8151F4002C98A161238C;
+			remoteInfo = Gryphon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0CC8CE8792AE0223672C9D09B4814A07 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F3497B4DD7AEB1F75051433D6CE4EA4 /* Pods-YurufuwaManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YurufuwaManage.debug.xcconfig"; sourceTree = "<group>"; };
+		16F0F7852C7B1190D071AC4E0453E35C /* Pods-YurufuwaManageUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YurufuwaManageUITests-dummy.m"; sourceTree = "<group>"; };
+		19DF2749615513BE24862363B1EF11B0 /* Task.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Task.swift; path = Gryphon/Task.swift; sourceTree = "<group>"; };
+		1A1711A7BA6EA075B4959DF79ED9E61C /* Pods-YurufuwaManage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YurufuwaManage-umbrella.h"; sourceTree = "<group>"; };
+		30F721DD4DDCC4FCDBBCCC7BB220D752 /* Pods-YurufuwaManage-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YurufuwaManage-frameworks.sh"; sourceTree = "<group>"; };
+		311707B7ED49BDA50AA3BB5E48CC54A7 /* Pods-YurufuwaManageTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YurufuwaManageTests-resources.sh"; sourceTree = "<group>"; };
+		31FA33CC4551F02A4C6390F7E362CCD5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		346FE93EFA02F8A70EFAF74A97E3FC44 /* Requestable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Requestable.swift; path = Gryphon/Requestable.swift; sourceTree = "<group>"; };
+		3787A88123BB633491C6EC3D438C95B6 /* Query.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Query.swift; path = Gryphon/Query.swift; sourceTree = "<group>"; };
+		451AD2F57AF5D87976E376DA84FE1BCD /* Pods-YurufuwaManage-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YurufuwaManage-acknowledgements.markdown"; sourceTree = "<group>"; };
+		46185331E9B7BA7BC66FEE4F2C90A457 /* Pods-YurufuwaManageUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YurufuwaManageUITests.modulemap"; sourceTree = "<group>"; };
+		46FF4A1C3C63F972312062AA62F115C7 /* RequestError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestError.swift; path = Gryphon/Error/RequestError.swift; sourceTree = "<group>"; };
+		48B538DE9690469BF4E262AF77F96AFE /* Pods-YurufuwaManageUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YurufuwaManageUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		496323ACA33F0B790BC571B997C6EFD0 /* Gryphon-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Gryphon-dummy.m"; sourceTree = "<group>"; };
+		4DA14BF2B285FB1BDC98A16B6F0F48DA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52188F790CFFF67791D52BB3D538AC97 /* Pods-YurufuwaManageTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YurufuwaManageTests.modulemap"; sourceTree = "<group>"; };
+		542351853756E34F524ECCCB6DF029C1 /* Gryphon.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Gryphon.modulemap; sourceTree = "<group>"; };
+		544CC721E170BF73D82B38D248854416 /* Pods-YurufuwaManageUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YurufuwaManageUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5C3EF43673D17D9DBFAA64C0C1C268C5 /* Pods-YurufuwaManage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YurufuwaManage.release.xcconfig"; sourceTree = "<group>"; };
+		5F1BCE48274F07DDB69AA38CDD54BAF7 /* Gryphon.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Gryphon.xcconfig; sourceTree = "<group>"; };
+		605A3235BEFDC0371EF9B4865FAB17F9 /* Pods-YurufuwaManage-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YurufuwaManage-resources.sh"; sourceTree = "<group>"; };
+		69331C37519C3E629E8DE0D128A18841 /* Pods-YurufuwaManageTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YurufuwaManageTests-dummy.m"; sourceTree = "<group>"; };
+		6B1AD26AA0E90737685BB9E8E715BF40 /* Pods-YurufuwaManageTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YurufuwaManageTests-umbrella.h"; sourceTree = "<group>"; };
+		7F344B326E607FD3DE4E7AC7B22617D3 /* ResponseError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseError.swift; path = Gryphon/Error/ResponseError.swift; sourceTree = "<group>"; };
+		88440D64F796630EBF8602270164DFAC /* ConnectionError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionError.swift; path = Gryphon/Error/ConnectionError.swift; sourceTree = "<group>"; };
+		88BBC469ED3BDE1E357CA701A72411D6 /* Pods-YurufuwaManage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YurufuwaManage.modulemap"; sourceTree = "<group>"; };
+		9262889113D3437AE85A5CEF1989AEB2 /* Pods-YurufuwaManageTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YurufuwaManageTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98C4390152345877F01D7D57A2E59EB6 /* Pods_YurufuwaManageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YurufuwaManageUITests.framework; path = "Pods-YurufuwaManageUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FF4463EC102B8E601FB44D200AF33E7 /* Pods-YurufuwaManageUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YurufuwaManageUITests-umbrella.h"; sourceTree = "<group>"; };
+		A21843678998383D1A2E389ACED49FF5 /* Pods-YurufuwaManage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YurufuwaManage-dummy.m"; sourceTree = "<group>"; };
+		A7BCBC270EC308DE34079F72BB6A2AEF /* Gryphon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gryphon.framework; path = Gryphon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEC6612E503EB10C8AA9DB2DBE1430E5 /* Pods-YurufuwaManageUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YurufuwaManageUITests-frameworks.sh"; sourceTree = "<group>"; };
+		B815A849EE5B91B523B918BF0E4C0E5D /* Pods-YurufuwaManageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YurufuwaManageTests.release.xcconfig"; sourceTree = "<group>"; };
+		BCDC3CAE03D29ECE71438B684A8312B6 /* Pods-YurufuwaManageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YurufuwaManageUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CC08E61E41C4370201A1631ECE305E23 /* Pods_YurufuwaManageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YurufuwaManageTests.framework; path = "Pods-YurufuwaManageTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D028C518C57160757BC7CB532C7CBAF6 /* Pods-YurufuwaManageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YurufuwaManageTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D536FC59FA6D83E7FF4844E0B6E2909A /* Pods-YurufuwaManageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YurufuwaManageUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC55F217B7D901C87B9537A96B8C2765 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBD21406D59D808A747183E8038AD5AC /* Gryphon-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gryphon-prefix.pch"; sourceTree = "<group>"; };
+		EE9FD7BD77FCDB546ECF28FC2F0FF5C0 /* Pods_YurufuwaManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YurufuwaManage.framework; path = "Pods-YurufuwaManage.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF67C1284B6F513660666B2D55AFDD7E /* Pods-YurufuwaManageTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YurufuwaManageTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F35284D71EBE771D86172196F1BE2E41 /* Gryphon-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gryphon-umbrella.h"; sourceTree = "<group>"; };
+		F62BF9F62CE6587AC6A9DEEFEAAD8404 /* Pods-YurufuwaManage-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YurufuwaManage-acknowledgements.plist"; sourceTree = "<group>"; };
+		F7453446B23EED957C06AC6E23F861E6 /* Pods-YurufuwaManageUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YurufuwaManageUITests-resources.sh"; sourceTree = "<group>"; };
+		FB7D69A31754EB9F8A8B46452342005E /* Pods-YurufuwaManageTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YurufuwaManageTests-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C2FBB61C6F6AC09D278B772B8BC9E5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C559C4C61F75D3F8BBCBA8E97DB9CDD0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43B80250FBC2948C0246FCF33197824F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A61F5DE20280EE28B0270E52157A071A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47AD6FA4693E08D5217208BBB8A5D9FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DE13CF454C991A6082CBA1CE4B776F8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C61A55E7E3CCD99519BCF99E0052F00E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB42653CE749BAE5959A7394E999758D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E5BF72A850F7808E7EA72221EA24671 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3919F22A49E3F2BA1965C98D3FB98C6A /* Gryphon */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3919F22A49E3F2BA1965C98D3FB98C6A /* Gryphon */ = {
+			isa = PBXGroup;
+			children = (
+				88440D64F796630EBF8602270164DFAC /* ConnectionError.swift */,
+				3787A88123BB633491C6EC3D438C95B6 /* Query.swift */,
+				346FE93EFA02F8A70EFAF74A97E3FC44 /* Requestable.swift */,
+				46FF4A1C3C63F972312062AA62F115C7 /* RequestError.swift */,
+				7F344B326E607FD3DE4E7AC7B22617D3 /* ResponseError.swift */,
+				19DF2749615513BE24862363B1EF11B0 /* Task.swift */,
+				ACFAD2D4002A83D57F3637CE644B7546 /* Support Files */,
+			);
+			name = Gryphon;
+			path = Gryphon;
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5F9211783650926EC6FD8F7A8BC7E4C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7BCBC270EC308DE34079F72BB6A2AEF /* Gryphon.framework */,
+				EE9FD7BD77FCDB546ECF28FC2F0FF5C0 /* Pods_YurufuwaManage.framework */,
+				CC08E61E41C4370201A1631ECE305E23 /* Pods_YurufuwaManageTests.framework */,
+				98C4390152345877F01D7D57A2E59EB6 /* Pods_YurufuwaManageUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		61556BB118996660BE00E5D2580E577C /* Pods-YurufuwaManage */ = {
+			isa = PBXGroup;
+			children = (
+				31FA33CC4551F02A4C6390F7E362CCD5 /* Info.plist */,
+				88BBC469ED3BDE1E357CA701A72411D6 /* Pods-YurufuwaManage.modulemap */,
+				451AD2F57AF5D87976E376DA84FE1BCD /* Pods-YurufuwaManage-acknowledgements.markdown */,
+				F62BF9F62CE6587AC6A9DEEFEAAD8404 /* Pods-YurufuwaManage-acknowledgements.plist */,
+				A21843678998383D1A2E389ACED49FF5 /* Pods-YurufuwaManage-dummy.m */,
+				30F721DD4DDCC4FCDBBCCC7BB220D752 /* Pods-YurufuwaManage-frameworks.sh */,
+				605A3235BEFDC0371EF9B4865FAB17F9 /* Pods-YurufuwaManage-resources.sh */,
+				1A1711A7BA6EA075B4959DF79ED9E61C /* Pods-YurufuwaManage-umbrella.h */,
+				0F3497B4DD7AEB1F75051433D6CE4EA4 /* Pods-YurufuwaManage.debug.xcconfig */,
+				5C3EF43673D17D9DBFAA64C0C1C268C5 /* Pods-YurufuwaManage.release.xcconfig */,
+			);
+			name = "Pods-YurufuwaManage";
+			path = "Target Support Files/Pods-YurufuwaManage";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				1E5BF72A850F7808E7EA72221EA24671 /* Pods */,
+				5F9211783650926EC6FD8F7A8BC7E4C7 /* Products */,
+				C108CE8438F8AFB866F76DCE50B94279 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		ACFAD2D4002A83D57F3637CE644B7546 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				542351853756E34F524ECCCB6DF029C1 /* Gryphon.modulemap */,
+				5F1BCE48274F07DDB69AA38CDD54BAF7 /* Gryphon.xcconfig */,
+				496323ACA33F0B790BC571B997C6EFD0 /* Gryphon-dummy.m */,
+				EBD21406D59D808A747183E8038AD5AC /* Gryphon-prefix.pch */,
+				F35284D71EBE771D86172196F1BE2E41 /* Gryphon-umbrella.h */,
+				DC55F217B7D901C87B9537A96B8C2765 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Gryphon";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C108CE8438F8AFB866F76DCE50B94279 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				61556BB118996660BE00E5D2580E577C /* Pods-YurufuwaManage */,
+				D7C6DA9ABDF34EF19E6BC95662C65976 /* Pods-YurufuwaManageTests */,
+				D528CD44992D2F4DA7808A05E5351E65 /* Pods-YurufuwaManageUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D528CD44992D2F4DA7808A05E5351E65 /* Pods-YurufuwaManageUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0CC8CE8792AE0223672C9D09B4814A07 /* Info.plist */,
+				46185331E9B7BA7BC66FEE4F2C90A457 /* Pods-YurufuwaManageUITests.modulemap */,
+				48B538DE9690469BF4E262AF77F96AFE /* Pods-YurufuwaManageUITests-acknowledgements.markdown */,
+				544CC721E170BF73D82B38D248854416 /* Pods-YurufuwaManageUITests-acknowledgements.plist */,
+				16F0F7852C7B1190D071AC4E0453E35C /* Pods-YurufuwaManageUITests-dummy.m */,
+				AEC6612E503EB10C8AA9DB2DBE1430E5 /* Pods-YurufuwaManageUITests-frameworks.sh */,
+				F7453446B23EED957C06AC6E23F861E6 /* Pods-YurufuwaManageUITests-resources.sh */,
+				9FF4463EC102B8E601FB44D200AF33E7 /* Pods-YurufuwaManageUITests-umbrella.h */,
+				D536FC59FA6D83E7FF4844E0B6E2909A /* Pods-YurufuwaManageUITests.debug.xcconfig */,
+				BCDC3CAE03D29ECE71438B684A8312B6 /* Pods-YurufuwaManageUITests.release.xcconfig */,
+			);
+			name = "Pods-YurufuwaManageUITests";
+			path = "Target Support Files/Pods-YurufuwaManageUITests";
+			sourceTree = "<group>";
+		};
+		D7C6DA9ABDF34EF19E6BC95662C65976 /* Pods-YurufuwaManageTests */ = {
+			isa = PBXGroup;
+			children = (
+				4DA14BF2B285FB1BDC98A16B6F0F48DA /* Info.plist */,
+				52188F790CFFF67791D52BB3D538AC97 /* Pods-YurufuwaManageTests.modulemap */,
+				9262889113D3437AE85A5CEF1989AEB2 /* Pods-YurufuwaManageTests-acknowledgements.markdown */,
+				EF67C1284B6F513660666B2D55AFDD7E /* Pods-YurufuwaManageTests-acknowledgements.plist */,
+				69331C37519C3E629E8DE0D128A18841 /* Pods-YurufuwaManageTests-dummy.m */,
+				FB7D69A31754EB9F8A8B46452342005E /* Pods-YurufuwaManageTests-frameworks.sh */,
+				311707B7ED49BDA50AA3BB5E48CC54A7 /* Pods-YurufuwaManageTests-resources.sh */,
+				6B1AD26AA0E90737685BB9E8E715BF40 /* Pods-YurufuwaManageTests-umbrella.h */,
+				D028C518C57160757BC7CB532C7CBAF6 /* Pods-YurufuwaManageTests.debug.xcconfig */,
+				B815A849EE5B91B523B918BF0E4C0E5D /* Pods-YurufuwaManageTests.release.xcconfig */,
+			);
+			name = "Pods-YurufuwaManageTests";
+			path = "Target Support Files/Pods-YurufuwaManageTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3979A8F251CF589CD6F45066DF1650F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				899BB2995ABE3ECBECD58410E3C07CAB /* Gryphon-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A5A7301027802244AE5BC9F26620AB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B2FB939A514FAA8824B6EB9A495D739 /* Pods-YurufuwaManage-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E12FAE553A24B068B1D673205258376D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEDE38C78E6B53E07DC5EB395BBB1D5F /* Pods-YurufuwaManageUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC81CC9C1A70CF901A5CC1F4E1D630EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				177CF5441FE8719BC59FBCD76E0DFA84 /* Pods-YurufuwaManageTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7D7F9F7019C8EC432F1F6AA85A1B1170 /* Pods-YurufuwaManage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33FD5FFE8AAAFAAA7FB41FFF5CF0D6A8 /* Build configuration list for PBXNativeTarget "Pods-YurufuwaManage" */;
+			buildPhases = (
+				53DF8E3B6CE28FAA9AA11C8913E5FC57 /* Sources */,
+				47AD6FA4693E08D5217208BBB8A5D9FA /* Frameworks */,
+				81A5A7301027802244AE5BC9F26620AB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB3A3630A8070E03F30502B6AE5D2508 /* PBXTargetDependency */,
+			);
+			name = "Pods-YurufuwaManage";
+			productName = "Pods-YurufuwaManage";
+			productReference = EE9FD7BD77FCDB546ECF28FC2F0FF5C0 /* Pods_YurufuwaManage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B4653BEE91DB319FF40B00F23B84151C /* Pods-YurufuwaManageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E98A85ED35B9D9BB85FD1673FED2F953 /* Build configuration list for PBXNativeTarget "Pods-YurufuwaManageTests" */;
+			buildPhases = (
+				5AB94639605AEECF8F174EA543165169 /* Sources */,
+				43B80250FBC2948C0246FCF33197824F /* Frameworks */,
+				EC81CC9C1A70CF901A5CC1F4E1D630EC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5176C9D3518CA2263027A52C02F36F3E /* PBXTargetDependency */,
+			);
+			name = "Pods-YurufuwaManageTests";
+			productName = "Pods-YurufuwaManageTests";
+			productReference = CC08E61E41C4370201A1631ECE305E23 /* Pods_YurufuwaManageTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CB6393CAF76FA0782FC826E43413DAB5 /* Pods-YurufuwaManageUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 652A1C04D8F9DE88C2CF920BC3BD5E30 /* Build configuration list for PBXNativeTarget "Pods-YurufuwaManageUITests" */;
+			buildPhases = (
+				ACA8DD2F176EE6F8A86495D2328CE4F0 /* Sources */,
+				2C2FBB61C6F6AC09D278B772B8BC9E5F /* Frameworks */,
+				E12FAE553A24B068B1D673205258376D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C905F67D23DF7A1177716577B9E43A02 /* PBXTargetDependency */,
+			);
+			name = "Pods-YurufuwaManageUITests";
+			productName = "Pods-YurufuwaManageUITests";
+			productReference = 98C4390152345877F01D7D57A2E59EB6 /* Pods_YurufuwaManageUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E44E0E3536AA8151F4002C98A161238C /* Gryphon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BD742D6A4DA856A7134DE254E4172FD /* Build configuration list for PBXNativeTarget "Gryphon" */;
+			buildPhases = (
+				F4AE25E86B412977D721C95BC320FCFE /* Sources */,
+				C61A55E7E3CCD99519BCF99E0052F00E /* Frameworks */,
+				3979A8F251CF589CD6F45066DF1650F0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gryphon;
+			productName = Gryphon;
+			productReference = A7BCBC270EC308DE34079F72BB6A2AEF /* Gryphon.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 5F9211783650926EC6FD8F7A8BC7E4C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E44E0E3536AA8151F4002C98A161238C /* Gryphon */,
+				7D7F9F7019C8EC432F1F6AA85A1B1170 /* Pods-YurufuwaManage */,
+				B4653BEE91DB319FF40B00F23B84151C /* Pods-YurufuwaManageTests */,
+				CB6393CAF76FA0782FC826E43413DAB5 /* Pods-YurufuwaManageUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53DF8E3B6CE28FAA9AA11C8913E5FC57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08ADBD02C7AD29F0CF59E54D93E0AD1A /* Pods-YurufuwaManage-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB94639605AEECF8F174EA543165169 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C5533E6E8239BD3841B7D9E27BBDB3B /* Pods-YurufuwaManageTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACA8DD2F176EE6F8A86495D2328CE4F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE887F553FAA38E1D5FB7D2B8C8A4A3D /* Pods-YurufuwaManageUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4AE25E86B412977D721C95BC320FCFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C4A41F236AF08F698E9121B5A794A4F /* ConnectionError.swift in Sources */,
+				C229C32716CD61B4AB2B33FEBACDB323 /* Gryphon-dummy.m in Sources */,
+				2FAC0E03946B66156FA270BBBA448BE9 /* Query.swift in Sources */,
+				BF7C4269F85E6984815721BBECBF0A1F /* Requestable.swift in Sources */,
+				48EB51E9BFF6A3E8741410020B734BD1 /* RequestError.swift in Sources */,
+				FFBDBD8592745C4E53CAA35FA3CE69BF /* ResponseError.swift in Sources */,
+				77836C6C472566B8208403CEEB378D8E /* Task.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5176C9D3518CA2263027A52C02F36F3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-YurufuwaManage";
+			target = 7D7F9F7019C8EC432F1F6AA85A1B1170 /* Pods-YurufuwaManage */;
+			targetProxy = 1AE203AB2B7D600763790FDFE00FD8C9 /* PBXContainerItemProxy */;
+		};
+		C905F67D23DF7A1177716577B9E43A02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-YurufuwaManage";
+			target = 7D7F9F7019C8EC432F1F6AA85A1B1170 /* Pods-YurufuwaManage */;
+			targetProxy = 7678EE541BCC814CF3F58B803B7574FA /* PBXContainerItemProxy */;
+		};
+		DB3A3630A8070E03F30502B6AE5D2508 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Gryphon;
+			target = E44E0E3536AA8151F4002C98A161238C /* Gryphon */;
+			targetProxy = 960832134CC9C38574159DE25D81412D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08638A96A528B1EC32DE62F8A728389D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		226697AB4C3A70C82903E609BDB9EEF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D536FC59FA6D83E7FF4844E0B6E2909A /* Pods-YurufuwaManageUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YurufuwaManageUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YurufuwaManageUITests/Pods-YurufuwaManageUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7182B04DE1A980DF98977F9D8E3CEBE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C3EF43673D17D9DBFAA64C0C1C268C5 /* Pods-YurufuwaManage.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YurufuwaManage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YurufuwaManage/Pods-YurufuwaManage.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		AFD11C3BEB89E3997FC73BF1365781DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F1BCE48274F07DDB69AA38CDD54BAF7 /* Gryphon.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Gryphon/Gryphon-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Gryphon/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Gryphon/Gryphon.modulemap";
+				PRODUCT_MODULE_NAME = Gryphon;
+				PRODUCT_NAME = Gryphon;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B44EDB6E1858EF4907DF287F1C6868D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F3497B4DD7AEB1F75051433D6CE4EA4 /* Pods-YurufuwaManage.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YurufuwaManage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YurufuwaManage/Pods-YurufuwaManage.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C7ECBAC8E29C21806D26D75F5D06771C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B815A849EE5B91B523B918BF0E4C0E5D /* Pods-YurufuwaManageTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YurufuwaManageTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YurufuwaManageTests/Pods-YurufuwaManageTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D3679DBE815B545BB4D493602D2E97D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F1BCE48274F07DDB69AA38CDD54BAF7 /* Gryphon.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Gryphon/Gryphon-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Gryphon/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Gryphon/Gryphon.modulemap";
+				PRODUCT_MODULE_NAME = Gryphon;
+				PRODUCT_NAME = Gryphon;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DDF2AAAA61BF6716C78286332151B9EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D028C518C57160757BC7CB532C7CBAF6 /* Pods-YurufuwaManageTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YurufuwaManageTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YurufuwaManageTests/Pods-YurufuwaManageTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EAB3549693F160C36C332E6B0C718DE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCDC3CAE03D29ECE71438B684A8312B6 /* Pods-YurufuwaManageUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YurufuwaManageUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YurufuwaManageUITests/Pods-YurufuwaManageUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BD742D6A4DA856A7134DE254E4172FD /* Build configuration list for PBXNativeTarget "Gryphon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFD11C3BEB89E3997FC73BF1365781DF /* Debug */,
+				D3679DBE815B545BB4D493602D2E97D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */,
+				08638A96A528B1EC32DE62F8A728389D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33FD5FFE8AAAFAAA7FB41FFF5CF0D6A8 /* Build configuration list for PBXNativeTarget "Pods-YurufuwaManage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B44EDB6E1858EF4907DF287F1C6868D8 /* Debug */,
+				7182B04DE1A980DF98977F9D8E3CEBE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		652A1C04D8F9DE88C2CF920BC3BD5E30 /* Build configuration list for PBXNativeTarget "Pods-YurufuwaManageUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226697AB4C3A70C82903E609BDB9EEF6 /* Debug */,
+				EAB3549693F160C36C332E6B0C718DE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E98A85ED35B9D9BB85FD1673FED2F953 /* Build configuration list for PBXNativeTarget "Pods-YurufuwaManageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDF2AAAA61BF6716C78286332151B9EF /* Debug */,
+				C7ECBAC8E29C21806D26D75F5D06771C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

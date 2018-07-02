@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0652A89B20EA7A040068A756 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652A89A20EA7A040068A756 /* API.swift */; };
 		0679AE1E20EA731F009B60C5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0679AE1D20EA731F009B60C5 /* Player.swift */; };
 		06EB280D20EA635000CBE6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB280C20EA635000CBE6FF /* AppDelegate.swift */; };
 		06EB280F20EA635000CBE6FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB280E20EA635000CBE6FF /* ViewController.swift */; };
@@ -15,6 +16,9 @@
 		06EB281720EA635100CBE6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EB281520EA635100CBE6FF /* LaunchScreen.storyboard */; };
 		06EB282220EA635100CBE6FF /* YurufuwaManageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB282120EA635100CBE6FF /* YurufuwaManageTests.swift */; };
 		06EB282D20EA635100CBE6FF /* YurufuwaManageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB282C20EA635100CBE6FF /* YurufuwaManageUITests.swift */; };
+		0AB58C917365BE1957282447 /* Pods_YurufuwaManageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37DD00B6CB62506D6789C34 /* Pods_YurufuwaManageUITests.framework */; };
+		19AA5D2C9F5189B8343BBC18 /* Pods_YurufuwaManageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879D7B2363B0C0FA7B5BE687 /* Pods_YurufuwaManageTests.framework */; };
+		68EF28C1FAF3C12A2C9791A7 /* Pods_YurufuwaManage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9FCF2FCD9DC48AB82B21B5 /* Pods_YurufuwaManage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0652A89A20EA7A040068A756 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0679AE1D20EA731F009B60C5 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		06EB280920EA635000CBE6FF /* YurufuwaManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YurufuwaManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EB280C20EA635000CBE6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,15 @@
 		06EB282820EA635100CBE6FF /* YurufuwaManageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YurufuwaManageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EB282C20EA635100CBE6FF /* YurufuwaManageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YurufuwaManageUITests.swift; sourceTree = "<group>"; };
 		06EB282E20EA635100CBE6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16B98A735456B56431B6B544 /* Pods-YurufuwaManageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YurufuwaManageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YurufuwaManageTests/Pods-YurufuwaManageTests.debug.xcconfig"; sourceTree = "<group>"; };
+		356FF99AEA8A2150084E84EF /* Pods-YurufuwaManageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YurufuwaManageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YurufuwaManageTests/Pods-YurufuwaManageTests.release.xcconfig"; sourceTree = "<group>"; };
+		46FDD553813212C295D12C6C /* Pods-YurufuwaManage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YurufuwaManage.release.xcconfig"; path = "Pods/Target Support Files/Pods-YurufuwaManage/Pods-YurufuwaManage.release.xcconfig"; sourceTree = "<group>"; };
+		4A325184F035C0AED6BE5673 /* Pods-YurufuwaManageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YurufuwaManageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YurufuwaManageUITests/Pods-YurufuwaManageUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6A9FCF2FCD9DC48AB82B21B5 /* Pods_YurufuwaManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YurufuwaManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		879D7B2363B0C0FA7B5BE687 /* Pods_YurufuwaManageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YurufuwaManageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A37DD00B6CB62506D6789C34 /* Pods_YurufuwaManageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YurufuwaManageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCAFB91EB0BB3D9C879A86EE /* Pods-YurufuwaManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YurufuwaManage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YurufuwaManage/Pods-YurufuwaManage.debug.xcconfig"; sourceTree = "<group>"; };
+		E1CBCBA8AE19ECC46A303885 /* Pods-YurufuwaManageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YurufuwaManageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YurufuwaManageUITests/Pods-YurufuwaManageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EF28C1FAF3C12A2C9791A7 /* Pods_YurufuwaManage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19AA5D2C9F5189B8343BBC18 /* Pods_YurufuwaManageTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AB58C917365BE1957282447 /* Pods_YurufuwaManageUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +100,8 @@
 				06EB282020EA635100CBE6FF /* YurufuwaManageTests */,
 				06EB282B20EA635100CBE6FF /* YurufuwaManageUITests */,
 				06EB280A20EA635000CBE6FF /* Products */,
+				57F369D569E6E8AE74638E19 /* Pods */,
+				13740FDC0C8BA3D4509686F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +120,7 @@
 			children = (
 				06EB280C20EA635000CBE6FF /* AppDelegate.swift */,
 				06EB280E20EA635000CBE6FF /* ViewController.swift */,
+				0652A89A20EA7A040068A756 /* API.swift */,
 				0679AE1D20EA731F009B60C5 /* Player.swift */,
 				06EB281020EA635000CBE6FF /* Main.storyboard */,
 				06EB281320EA635100CBE6FF /* Assets.xcassets */,
@@ -128,6 +148,29 @@
 			path = YurufuwaManageUITests;
 			sourceTree = "<group>";
 		};
+		13740FDC0C8BA3D4509686F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A9FCF2FCD9DC48AB82B21B5 /* Pods_YurufuwaManage.framework */,
+				879D7B2363B0C0FA7B5BE687 /* Pods_YurufuwaManageTests.framework */,
+				A37DD00B6CB62506D6789C34 /* Pods_YurufuwaManageUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57F369D569E6E8AE74638E19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DCAFB91EB0BB3D9C879A86EE /* Pods-YurufuwaManage.debug.xcconfig */,
+				46FDD553813212C295D12C6C /* Pods-YurufuwaManage.release.xcconfig */,
+				16B98A735456B56431B6B544 /* Pods-YurufuwaManageTests.debug.xcconfig */,
+				356FF99AEA8A2150084E84EF /* Pods-YurufuwaManageTests.release.xcconfig */,
+				E1CBCBA8AE19ECC46A303885 /* Pods-YurufuwaManageUITests.debug.xcconfig */,
+				4A325184F035C0AED6BE5673 /* Pods-YurufuwaManageUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06EB283120EA635100CBE6FF /* Build configuration list for PBXNativeTarget "YurufuwaManage" */;
 			buildPhases = (
+				2C953D2FAF419B02F8B1009A /* [CP] Check Pods Manifest.lock */,
 				06EB280520EA635000CBE6FF /* Sources */,
 				06EB280620EA635000CBE6FF /* Frameworks */,
 				06EB280720EA635000CBE6FF /* Resources */,
+				2AB54CB67F6F40EBF96265A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06EB283420EA635100CBE6FF /* Build configuration list for PBXNativeTarget "YurufuwaManageTests" */;
 			buildPhases = (
+				DE682574C553A0A2D7163DCD /* [CP] Check Pods Manifest.lock */,
 				06EB281920EA635100CBE6FF /* Sources */,
 				06EB281A20EA635100CBE6FF /* Frameworks */,
 				06EB281B20EA635100CBE6FF /* Resources */,
@@ -170,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06EB283720EA635100CBE6FF /* Build configuration list for PBXNativeTarget "YurufuwaManageUITests" */;
 			buildPhases = (
+				64087335BA23B80F6FBC0A58 /* [CP] Check Pods Manifest.lock */,
 				06EB282420EA635100CBE6FF /* Sources */,
 				06EB282520EA635100CBE6FF /* Frameworks */,
 				06EB282620EA635100CBE6FF /* Resources */,
@@ -254,6 +301,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2AB54CB67F6F40EBF96265A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YurufuwaManage/Pods-YurufuwaManage-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Gryphon/Gryphon.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gryphon.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YurufuwaManage/Pods-YurufuwaManage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C953D2FAF419B02F8B1009A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YurufuwaManage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64087335BA23B80F6FBC0A58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YurufuwaManageUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE682574C553A0A2D7163DCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YurufuwaManageTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		06EB280520EA635000CBE6FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +383,7 @@
 			files = (
 				06EB280F20EA635000CBE6FF /* ViewController.swift in Sources */,
 				0679AE1E20EA731F009B60C5 /* Player.swift in Sources */,
+				0652A89B20EA7A040068A756 /* API.swift in Sources */,
 				06EB280D20EA635000CBE6FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +555,7 @@
 		};
 		06EB283220EA635100CBE6FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCAFB91EB0BB3D9C879A86EE /* Pods-YurufuwaManage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -451,6 +575,7 @@
 		};
 		06EB283320EA635100CBE6FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46FDD553813212C295D12C6C /* Pods-YurufuwaManage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +595,7 @@
 		};
 		06EB283520EA635100CBE6FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16B98A735456B56431B6B544 /* Pods-YurufuwaManageTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +616,7 @@
 		};
 		06EB283620EA635100CBE6FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 356FF99AEA8A2150084E84EF /* Pods-YurufuwaManageTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +637,7 @@
 		};
 		06EB283820EA635100CBE6FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1CBCBA8AE19ECC46A303885 /* Pods-YurufuwaManageUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -529,6 +657,7 @@
 		};
 		06EB283920EA635100CBE6FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A325184F035C0AED6BE5673 /* Pods-YurufuwaManageUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

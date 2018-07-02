@@ -1,0 +1,16 @@
+PODS:
+  - Gryphon (3.1.0)
+
+DEPENDENCIES:
+  - Gryphon (~> 3.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Gryphon
+
+SPEC CHECKSUMS:
+  Gryphon: 4be80ea5cd7f00421915ddce4e5c0e662ab5d5ff
+
+PODFILE CHECKSUM: 1b817e3bb5fda7592363c45562b71ad2b8ea6980
+
+COCOAPODS: 1.5.2

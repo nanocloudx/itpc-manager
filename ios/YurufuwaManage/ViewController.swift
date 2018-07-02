@@ -50,7 +50,6 @@ class ViewController: UIViewController {
                 previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
                 previewLayer.frame = self.view.bounds
                 previewLayer.videoGravity = .resizeAspectFill
-                self.view.layer.addSublayer(previewLayer)
             }
         } catch {
             print("Error occured while creating video device input: \(error)")
@@ -67,18 +66,20 @@ class ViewController: UIViewController {
         switch player?.status {
         case "none":
             statusChangeButton.isHidden = false
-            statusChangeButton.setTitle("Join!!", for: .normal)
-        case "join":
+            statusChangeButton.setTitle("change to Active", for: .normal)
+        case "active":
             statusChangeButton.isHidden = false
-            statusChangeButton.setTitle("Finish!!", for: .normal)
+            statusChangeButton.setTitle("change to Finish", for: .normal)
         case "finish":
             statusChangeButton.isHidden = true
         default:
+            statusChangeButton.isHidden = true
             break
         }
     }
     
     @IBAction func didTapLoadButton(_ sender: Any) {
+        self.view.layer.addSublayer(previewLayer)
         session.startRunning()
     }
     
@@ -86,20 +87,48 @@ class ViewController: UIViewController {
         guard let status = player?.status, let uuid = player?.uuid else { return }
         switch status {
         case "none":
-            updatePlayerStatus(uuid: uuid, status: "join")
-        case "join":
+            updatePlayerStatus(uuid: uuid, status: "active")
+        case "active":
             updatePlayerStatus(uuid: uuid, status: "finish")
         default:
             break
         }
     }
     
-    private func getPlayerInfo(uuid: String) -> Player? {
-        return Player.init(uuid: uuid, name: "馬場南実", company: "hogehoge", status: "join")
+    private func getPlayerInfo(uuid: String, completion: @escaping () -> Void) {
+        API.Players.getPlayer(uuid: uuid).response { result in
+            switch result {
+            case let .response(player):
+                print("Player=\(player)")
+                self.player = player
+                completion()
+            case let .error(error):
+                print("Error=\(error)")
+            }
+        }
     }
     
     private func updatePlayerStatus(uuid: String, status: String) {
-        print("\(uuid) update to \(status)")
+        API.Players.getToken().response { result in
+            switch result {
+            case let .response(token):
+                API.Players.updatePlayer(uuid: uuid, status: status, token: token).response { result in
+                    switch result {
+                    case let .response(statusCode):
+                        self.getPlayerInfo(uuid: uuid, completion: {
+                            DispatchQueue.main.async {
+                                self.reloadInfo()
+                            }
+                        })
+                        print("StatusCode=\(statusCode)")
+                    case let .error(error):
+                        print("Error=\(error)")
+                    }
+                }
+            case let .error(error):
+                print("Error=\(error)")
+            }
+        }
     }
 }
 
@@ -111,8 +140,11 @@ extension ViewController : AVCaptureMetadataOutputObjectsDelegate {
                 continue
             }
           
-            self.player = getPlayerInfo(uuid: uuid)
-            reloadInfo()
+            getPlayerInfo(uuid: uuid) {
+                DispatchQueue.main.async {
+                    self.reloadInfo()
+                }
+            }
             
             session.stopRunning()
             previewLayer.removeFromSuperlayer()

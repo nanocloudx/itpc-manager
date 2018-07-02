@@ -20,4 +20,11 @@ struct Player {
         self.company = company
         self.status = status
     }
+    
+    init(json: [String: String]) {
+        self.uuid = json["id"]
+        self.name = json["name"]
+        self.company = json["organization"]
+        self.status = json["status"]
+    }
 }

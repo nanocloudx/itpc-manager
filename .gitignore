@@ -1,0 +1,7 @@
+.env
+.idea
+.log
+node_modules
+coverage
+public/*.js
+dump.rdb

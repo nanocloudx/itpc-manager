@@ -1,6 +1,6 @@
 module.exports = {
   development: {
-    database: 'itpc',
+    database: 'itpc-manager',
     url: process.env.DATABASE_URL,
     dialect: 'postgres',
     dialectOptions: {

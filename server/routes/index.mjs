@@ -6,44 +6,63 @@ import models from '../database/models'
 const router = express.Router()
 
 /**
+ * CSRFToken
+ */
+router.get('/api/token', isAuthenticated, (req, res, next) => {
+  res.json({ token: req.csrfToken() })
+})
+
+/**
+ * イベント一覧
+ */
+router.get('/api/event', isAuthenticated, (req, res, next) => {
+  httpResponse(db.findAll(models.event), res, next)
+})
+
+/**
  * プレーヤー一覧
  */
-router.get('/api/event/31/players', isAuthenticated, (req, res, next) => {
+router.get('/api/event/:eventId/players', isAuthenticated, (req, res, next) => {
   httpResponse(db.findAll(models.player), res, next)
 })
 
 /**
  * プレーヤー情報
  */
-router.get('/api/event/31/players/:playerId', isAuthenticated, (req, res, next) => {
+router.get('/api/event/:eventId/players/:playerId', isAuthenticated, (req, res, next) => {
   httpResponse(db.findById(models.player, req.params.playerId), res, next)
 })
 
 /**
  * プレーヤー登録
  */
-router.post('/api/event/31/players/', isAuthenticated, (req, res, next) => {
-  httpResponse(db.create(models.player), res, next)
+router.post('/api/event/:eventId/players/', isAuthenticated, (req, res, next) => {
+  const context = {
+    organization: req.body.organization,
+    name: req.body.name,
+    status: 'none'
+  }
+  httpResponse(db.create(models.player, context), res, next)
 })
 
 /**
  * プレーヤーゲーム開始
  */
-router.put('/api/event/31/players/:playerId/active', isAuthenticated, (req, res, next) => {
+router.put('/api/event/:eventId/players/:playerId/active', isAuthenticated, (req, res, next) => {
   httpResponse(db.update(models.player, req.params.playerId, { status: 'active' }), res, next)
 })
 
 /**
  * プレーヤーゲーム終了
  */
-router.put('/api/event/31/players/:playerId/finish', isAuthenticated, (req, res, next) => {
+router.put('/api/event/:eventId/players/:playerId/finish', isAuthenticated, (req, res, next) => {
   httpResponse(db.update(models.player, req.params.playerId, { status: 'finish' }), res, next)
 })
 
 /**
  * プレーヤーゲーム中止
  */
-router.put('/api/event/31/players/:playerId/cancel', isAuthenticated, (req, res, next) => {
+router.put('/api/event/:eventId/players/:playerId/cancel', isAuthenticated, (req, res, next) => {
   httpResponse(db.update(models.player, req.params.playerId, { status: 'none' }), res, next)
 })
 
@@ -61,10 +80,10 @@ function httpResponse (dbRequest, res, next) {
 }
 
 function isAuthenticated(req, res, next) {
-  if (!req.user || req.user.profile.id !== process.env.GITHUB_ADMIN_ID) {
-    next(createError(404))
-    return
-  }
+  // if (!req.user || req.user.profile.id !== process.env.GITHUB_ADMIN_ID) {
+  //   next(createError(404))
+  //   return
+  // }
   return next()
 }
 

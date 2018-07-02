@@ -19,9 +19,10 @@ export default {
   /**
    * create
    * @param schema
+   * @param context
    * @returns {*}
    */
-  create: (schema) => schema.create({ id: uuidv4() }),
+  create: (schema, context) => schema.create(Object.assign({ id: uuidv4() }, context)),
 
   /**
    * update

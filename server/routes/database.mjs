@@ -4,17 +4,18 @@ export default {
   /**
    * findAll
    * @param schema
+   * @param where
    * @returns {*|Promise<Array<Model>>}
    */
-  findAll: (schema) => schema.findAll(),
+  findAll: (schema, where = {}) => schema.findAll({ where }),
 
   /**
-   * findById
+   * findOne
    * @param schema
-   * @param id
+   * @param where
    * @returns {*|Promise<Model>}
    */
-  findById: (schema, id) => schema.findById(id),
+  findOne: (schema, where) => schema.findOne({ where }),
 
   /**
    * create
@@ -22,16 +23,20 @@ export default {
    * @param context
    * @returns {*}
    */
-  create: (schema, context) => schema.create(Object.assign({ id: uuidv4() }, context)),
+  create: (schema, context) => {
+    const hoge = Object.assign({ id: uuidv4() }, context)
+    console.log('Hola', hoge)
+    return schema.create(hoge)
+  },
 
   /**
    * update
    * @param schema
-   * @param id
+   * @param where
    * @param context
    * @returns {*}
    */
-  update: (schema, id, context) => schema.update(context, { where: { id } }),
+  update: (schema, where, context) => schema.update(context, { where }),
 
   /**
    * destroy

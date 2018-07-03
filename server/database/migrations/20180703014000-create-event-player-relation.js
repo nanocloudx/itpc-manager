@@ -2,28 +2,32 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('event_player_relations', {
+    return queryInterface.createTable('EventPlayerRelations', {
       id: {
-        type: Sequelize.UUID,
+        allowNull: false,
         defaultValue: Sequelize.UUIDV4,
-        primaryKey: true
+        primaryKey: true,
+        type: Sequelize.UUID
       },
       rank: {
         type: Sequelize.INTEGER
       },
-      eventId: {
-        type: Sequelize.UUID,
+      status: {
+        type: Sequelize.STRING
+      },
+      EventId: {
+        type: Sequelize.STRING,
         references: {
-          model: 'events',
+          model: 'Events',
           key: 'id'
         },
         onUpdate: 'cascade',
         onDelete: 'cascade'
       },
-      playerId: {
+      PlayerId: {
         type: Sequelize.UUID,
         references: {
-          model: 'players',
+          model: 'Players',
           key: 'id'
         },
         onUpdate: 'cascade',
@@ -39,14 +43,13 @@ module.exports = {
       }
     }).then(() =>
       queryInterface.addIndex(
-        'event_player_relations',
-        ['eventId', 'playerId'],
+        'EventPlayerRelations',
+        ['EventId', 'PlayerId'],
         { indicesType: 'UNIQUE' }
       )
     )
   },
-
   down: (queryInterface) => {
-    return queryInterface.dropTable('event_player_relations')
+    return queryInterface.dropTable('EventPlayerRelations')
   }
 }

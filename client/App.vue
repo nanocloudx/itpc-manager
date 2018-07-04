@@ -2,7 +2,9 @@
   <div id="app">
     <header>
       <div class="wrapper">
-        <h1 class="header-title">ITPC Manager</h1>
+        <router-link to="/">
+          <h1 class="header-title">ITPC Manager</h1>
+        </router-link>
       </div>
     </header>
     <div class="main">
@@ -35,6 +37,13 @@ export default {
     background-color: rgb(25, 25, 25);
     color: #ffffff;
     font-size: 1rem;
+    a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+  a {
+    color: #ffffff;
   }
   .wrapper {
     max-width: 1200px;

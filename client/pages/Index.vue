@@ -1,26 +1,13 @@
 <template>
   <div>
-    <p>It works!</p>
+    <router-link :to="{ name: 'Players' }">Players</router-link>
+    <router-link :to="{ name: 'Events' }">Events</router-link>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex'
-
 export default {
-  components: {
-    //
-  },
-  computed: {
-    ...mapState([]),
-    ...mapGetters([])
-  },
-  beforeMount () {
-    //
-  },
-  methods: {
-    ...mapActions([])
-  }
+
 }
 </script>
 

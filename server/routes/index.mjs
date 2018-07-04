@@ -171,7 +171,7 @@ router.put('/api/events/:eventId/players/:playerId/none', async (req, res, next)
 /**
  * レンダリング
  */
-router.get(['/'], (req, res, next) => {
+router.get(['*'], (req, res, next) => {
   res.render('index')
 })
 

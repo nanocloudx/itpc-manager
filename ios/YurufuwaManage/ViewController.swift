@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     private let session = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer!
     private var player: Player?
+    @IBOutlet weak var cameraView: UIView!
     
     @IBOutlet weak var uuidLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
@@ -25,16 +26,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareCamera()
-        reloadInfo()
     }
     
     func prepareCamera() {
-        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back)
-        let devices = discoverySession.devices
+        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera],
+                                                                mediaType: .video, position: .back)
         
-        guard let backCamera = devices.first else {
-            return
-        }
+        let devices = discoverySession.devices
+        guard let backCamera = devices.first else { return }
         
         do {
             let deviceInput = try AVCaptureDeviceInput(device: backCamera)
@@ -48,7 +47,7 @@ class ViewController: UIViewController {
                 metadataOutput.metadataObjectTypes = [.qr]
                         
                 previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
-                previewLayer.frame = self.view.bounds
+                previewLayer.frame = cameraView.bounds
                 previewLayer.videoGravity = .resizeAspectFill
             }
         } catch {
@@ -56,79 +55,37 @@ class ViewController: UIViewController {
         }
     }
     
-    func reloadInfo() {
-        playerView.isHidden = (player == nil)
-        uuidLabel.text = player?.uuid
-        nameLabel.text = player?.name
-        companyLabel.text = player?.company
-        statusLabel.text = player?.status
-        
-        switch player?.status {
-        case "none":
-            statusChangeButton.isHidden = false
-            statusChangeButton.setTitle("change to Active", for: .normal)
-        case "active":
-            statusChangeButton.isHidden = false
-            statusChangeButton.setTitle("change to Finish", for: .normal)
-        case "finish":
-            statusChangeButton.isHidden = true
-        default:
-            statusChangeButton.isHidden = true
-            break
+    
+    private func startCameraSession() {
+        cameraView.isHidden = false
+        cameraView.layer.insertSublayer(previewLayer, at: 0)
+        session.startRunning()
+    }
+    
+    private func stopCameraSession() {
+        session.stopRunning()
+        previewLayer.removeFromSuperlayer()
+        cameraView.isHidden = true
+    }
+    
+    private func getPlayerInfo(uuid: String, completion: @escaping (Player?) -> Void) {
+        API.Players.getPlayer(uuid: uuid).response { result in
+            switch result {
+            case let .response(player):
+                completion(player)
+            case let .error(error):
+                print(error)
+                completion(nil)
+            }
         }
     }
     
     @IBAction func didTapLoadButton(_ sender: Any) {
-        self.view.layer.addSublayer(previewLayer)
-        session.startRunning()
+        startCameraSession()
     }
     
-    @IBAction func didTapStatusChangeButton(_ sender: Any) {
-        guard let status = player?.status, let uuid = player?.uuid else { return }
-        switch status {
-        case "none":
-            updatePlayerStatus(uuid: uuid, status: "active")
-        case "active":
-            updatePlayerStatus(uuid: uuid, status: "finish")
-        default:
-            break
-        }
-    }
-    
-    private func getPlayerInfo(uuid: String, completion: @escaping () -> Void) {
-        API.Players.getPlayer(uuid: uuid).response { result in
-            switch result {
-            case let .response(player):
-                print("Player=\(player)")
-                self.player = player
-                completion()
-            case let .error(error):
-                print("Error=\(error)")
-            }
-        }
-    }
-    
-    private func updatePlayerStatus(uuid: String, status: String) {
-        API.Players.getToken().response { result in
-            switch result {
-            case let .response(token):
-                API.Players.updatePlayer(uuid: uuid, status: status, token: token).response { result in
-                    switch result {
-                    case let .response(statusCode):
-                        self.getPlayerInfo(uuid: uuid, completion: {
-                            DispatchQueue.main.async {
-                                self.reloadInfo()
-                            }
-                        })
-                        print("StatusCode=\(statusCode)")
-                    case let .error(error):
-                        print("Error=\(error)")
-                    }
-                }
-            case let .error(error):
-                print("Error=\(error)")
-            }
-        }
+    @IBAction func didTapCameraCloseButton(_ sender: Any) {
+        stopCameraSession()
     }
 }
 
@@ -139,15 +96,16 @@ extension ViewController : AVCaptureMetadataOutputObjectsDelegate {
             guard let uuid = metadata.stringValue, metadata.type == .qr else {
                 continue
             }
-          
-            getPlayerInfo(uuid: uuid) {
+            
+            self.stopCameraSession()
+            getPlayerInfo(uuid: uuid) { player in
                 DispatchQueue.main.async {
-                    self.reloadInfo()
+                    self.stopCameraSession()
+                    if let player = player {
+                        self.present(StatusChangeViewController.create(player: player), animated: true, completion: nil)
+                    }
                 }
             }
-            
-            session.stopRunning()
-            previewLayer.removeFromSuperlayer()
         }
     }
 }

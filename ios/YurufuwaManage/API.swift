@@ -20,7 +20,7 @@ extension API {
         }
         
         static var path: String {
-            return "/api/event/31/players/"
+            return "/api/events/example/players/"
         }
         
         class func getPlayers() -> Task<String, Error> {
@@ -49,11 +49,12 @@ extension API {
                 request.httpMethod = "GET"
                 let session = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                     guard let data = data,
-                    let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: String] else {
-                            result(.error(ResponseError.unexceptedResponse(error as AnyObject)))
-                            return
+                    let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
+                    let player = json as? [String: String?] else {
+                        result(.error(ResponseError.unexceptedResponse(error as AnyObject)))
+                        return
                     }
-                    result(.response(Player.init(json: json!)))
+                    result(.response(Player.init(json: player)))
                 })
                 session.resume()
             }
@@ -79,14 +80,13 @@ extension API {
         }
         
         
-        //status : active/finish/cancel
-        class func updatePlayer(uuid: String, status: String, token: String) -> Task<Int, Error> {
+        //status : playing/finish/none
+        class func updatePlayer(uuid: String, status: String) -> Task<Int, Error> {
             let task = Task<Int, Error> { result in
                 let url = URL(string: baseURL + path + uuid + "/" + status)!
                 print(url)
                 var request = URLRequest(url: url)
                 request.httpMethod = "PUT"
-                request.setValue(token, forHTTPHeaderField: "x-csrf-token")
                 let session = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                     guard let statusCode = (response as? HTTPURLResponse)?.statusCode else { return }
                     if 200...299 ~= statusCode {

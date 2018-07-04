@@ -75,7 +75,16 @@ router.get('/api/events/:eventId/players', async (req, res, next) => {
     }],
     where: { id: req.params.eventId }
   })
-  databaseResponse(results, res)
+  const players = results.Players.map(player => {
+    return {
+      id: player.id,
+      organization: player.organization,
+      name: player.name,
+      rank: player.EventPlayerRelation.rank,
+      status: player.EventPlayerRelation.status
+    }
+  })
+  databaseResponse(players, res)
 })
 
 /**
@@ -102,7 +111,14 @@ router.get('/api/events/:eventId/players/:playerId', async (req, res, next) => {
     }],
     where: { id: req.params.eventId }
   })
-  databaseResponse(results, res)
+  const player = {
+    id: results.Players[0].id,
+      organization: results.Players[0].organization,
+    name: results.Players[0].name,
+    rank: results.Players[0].EventPlayerRelation.rank,
+    status: results.Players[0].EventPlayerRelation.status
+  }
+  databaseResponse(player, res)
 })
 
 /**

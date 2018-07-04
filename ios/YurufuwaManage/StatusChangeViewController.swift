@@ -60,6 +60,9 @@ class StatusChangeViewController: UIViewController {
         callUpdatePlayerStatus(status: PlayerStatus.none.rawValue)
     }
     
+    @IBAction func didTapCloseButton(_ sender: Any) {
+        dismiss(animated: true, completion: {})
+    }
     private func callUpdatePlayerStatus(status: String) {
         updatePlayerStatus(uuid: player.uuid!, status: status) {
             self.dismiss(animated: true) {

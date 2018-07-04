@@ -29,10 +29,12 @@ struct Player {
     }
     
     init(json: [String: String?]) {
-        self.uuid = json["id"]!
-        self.name = json["name"]!
-        self.company = json["organization"]!
-        self.status = PlayerStatus(rawValue: json["status"]!!)
+        self.uuid = json["id"] ?? ""
+        self.name = json["name"] ?? ""
+        self.company = json["organization"] ?? ""
+        if let status = json["status"] {
+            self.status = PlayerStatus(rawValue: status ?? "")
+        }
     }
     
     static func getPlayers(json: [[String: String?]]) -> [Player] {

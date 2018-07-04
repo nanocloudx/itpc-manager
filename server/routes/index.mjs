@@ -1,4 +1,3 @@
-// import createError from 'http-errors'
 import express from 'express'
 import models from '../database/models'
 import uuidv4 from 'uuid/v4'
@@ -11,7 +10,7 @@ const router = express.Router()
  * イベント一覧
  */
 router.get('/api/events', async (req, res, next) => {
-  const results = await models.Event.findAll()
+  const results = await models.Event.findAll({ attributes: { exclude: ['createdAt', 'updatedAt'] } })
   databaseResponse(results, res)
 })
 
@@ -19,7 +18,7 @@ router.get('/api/events', async (req, res, next) => {
  * イベント情報
  */
 router.get('/api/events/:eventId', async (req, res, next) => {
-  const results = await models.Event.findById(req.params.eventId)
+  const results = await models.Event.findById(req.params.eventId, { attributes: { exclude: ['createdAt', 'updatedAt'] } })
   databaseResponse(results, res)
 })
 
@@ -40,7 +39,7 @@ router.post('/api/events', async (req, res, next) => {
  * プレーヤー一覧
  */
 router.get('/api/players', async (req, res, next) => {
-  const results = await models.Player.findAll()
+  const results = await models.Player.findAll({ attributes: { exclude: ['createdAt', 'updatedAt'] } })
   databaseResponse(results, res)
 })
 
@@ -48,7 +47,7 @@ router.get('/api/players', async (req, res, next) => {
  * プレーヤー情報
  */
 router.get('/api/players/:playerId', async (req, res, next) => {
-  const results = await models.Player.findById(req.params.playerId)
+  const results = await models.Player.findById(req.params.playerId, { attributes: { exclude: ['createdAt', 'updatedAt'] } })
   databaseResponse(results, res)
 })
 

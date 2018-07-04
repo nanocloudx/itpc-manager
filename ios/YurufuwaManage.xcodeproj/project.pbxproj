@@ -10,6 +10,7 @@
 		0634163920ED09CA006EB1F5 /* StatusChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0634163820ED09CA006EB1F5 /* StatusChangeViewController.swift */; };
 		0634163B20ED09D2006EB1F5 /* StatusChange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0634163A20ED09D2006EB1F5 /* StatusChange.storyboard */; };
 		0652A89B20EA7A040068A756 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652A89A20EA7A040068A756 /* API.swift */; };
+		06572E4D20ED390F0037C4B8 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06572E4C20ED390F0037C4B8 /* PlayerTableViewCell.swift */; };
 		0679AE1E20EA731F009B60C5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0679AE1D20EA731F009B60C5 /* Player.swift */; };
 		06EB280D20EA635000CBE6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB280C20EA635000CBE6FF /* AppDelegate.swift */; };
 		06EB280F20EA635000CBE6FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB280E20EA635000CBE6FF /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		0634163820ED09CA006EB1F5 /* StatusChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChangeViewController.swift; sourceTree = "<group>"; };
 		0634163A20ED09D2006EB1F5 /* StatusChange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusChange.storyboard; sourceTree = "<group>"; };
 		0652A89A20EA7A040068A756 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		06572E4C20ED390F0037C4B8 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		0679AE1D20EA731F009B60C5 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		06EB280920EA635000CBE6FF /* YurufuwaManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YurufuwaManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EB280C20EA635000CBE6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				06EB280C20EA635000CBE6FF /* AppDelegate.swift */,
 				06EB280E20EA635000CBE6FF /* ViewController.swift */,
+				06572E4C20ED390F0037C4B8 /* PlayerTableViewCell.swift */,
 				0634163820ED09CA006EB1F5 /* StatusChangeViewController.swift */,
 				0652A89A20EA7A040068A756 /* API.swift */,
 				0679AE1D20EA731F009B60C5 /* Player.swift */,
@@ -388,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06572E4D20ED390F0037C4B8 /* PlayerTableViewCell.swift in Sources */,
 				06EB280F20EA635000CBE6FF /* ViewController.swift in Sources */,
 				0679AE1E20EA731F009B60C5 /* Player.swift in Sources */,
 				0652A89B20EA7A040068A756 /* API.swift in Sources */,

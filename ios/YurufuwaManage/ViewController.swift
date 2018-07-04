@@ -14,8 +14,11 @@ class ViewController: UIViewController {
     private let session = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer!
     private var player: Player?
-    @IBOutlet weak var cameraView: UIView!
+    private var players: [PlayerStatus: [Player]] = [:]
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var uuidLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -23,9 +26,46 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var statusChangeButton: UIButton!
     
+    private let playerStatus: [PlayerStatus] = [PlayerStatus.playing, PlayerStatus.finish, PlayerStatus.none]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareCamera()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reload),
+                                               name: NSNotification.Name(rawValue: "PlayerTableViewReload"),
+                                               object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func reload(notification: Notification) {
+        reloadPlayers()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        reloadPlayers()
+    }
+
+    private func reloadPlayers() {
+        getPlayers { players in
+            self.players = [
+                PlayerStatus.playing: players.filter { $0.status == PlayerStatus.playing },
+                PlayerStatus.finish: players.filter { $0.status == PlayerStatus.finish },
+                PlayerStatus.none: players.filter { $0.status == PlayerStatus.none }
+            ]
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func prepareCamera() {
@@ -80,6 +120,18 @@ class ViewController: UIViewController {
         }
     }
     
+    private func getPlayers(completion: @escaping ([Player]) -> Void) {
+        API.Players.getPlayers().response { result in
+            switch result {
+            case let .response(players):
+                completion(players)
+            case let .error(error):
+                print(error)
+                completion([])
+            }
+        }
+    }
+    
     @IBAction func didTapLoadButton(_ sender: Any) {
         startCameraSession()
     }
@@ -90,7 +142,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController : AVCaptureMetadataOutputObjectsDelegate {
+extension ViewController: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
             guard let uuid = metadata.stringValue, metadata.type == .qr else {
@@ -107,6 +159,32 @@ extension ViewController : AVCaptureMetadataOutputObjectsDelegate {
                 }
             }
         }
+    }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return playerStatus.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return players[playerStatus[section]]?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableViewCell") as! PlayerTableViewCell
+        guard let players = players[playerStatus[indexPath.section]] else {
+            return cell
+        }
+        
+        let player = players[indexPath.row]
+        cell.nameLabel.text = player.name
+        cell.organizationLabel.text = player.company
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return Player.getStatusString(status: playerStatus[section])
     }
 }
 

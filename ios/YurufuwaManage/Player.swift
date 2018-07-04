@@ -9,7 +9,7 @@
 import Foundation
 
 enum PlayerStatus: String {
-    case active = "playing"
+    case playing = "playing"
     case finish = "finish"
     case none = "none"
 }
@@ -29,10 +29,28 @@ struct Player {
     }
     
     init(json: [String: String?]) {
-        print(json)
         self.uuid = json["id"]!
         self.name = json["name"]!
         self.company = json["organization"]!
         self.status = PlayerStatus(rawValue: json["status"]!!)
+    }
+    
+    static func getPlayers(json: [[String: String?]]) -> [Player] {
+        var players: [Player] = []
+        for j in json {
+            players.append(Player.init(json: j))
+        }
+        return players
+    }
+    
+    static func getStatusString(status: PlayerStatus) -> String {
+        switch status {
+        case .playing:
+            return "参加中"
+        case .finish:
+            return "終了"
+        case .none:
+            return "未参加"
+        }
     }
 }

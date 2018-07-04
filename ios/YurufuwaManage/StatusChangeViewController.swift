@@ -32,50 +32,47 @@ class StatusChangeViewController: UIViewController {
         organizationLabel.text = player.company
         nameLabel.text = player.name
         
+        statusLabel.text = Player.getStatusString(status: player.status!)
+        
         switch player.status! {
-        case .active:
-            statusLabel.text = "参加中"
+        case .playing:
             activateButton.alpha = 0.2
             activateButton.isEnabled = false
         case .finish:
-            statusLabel.text = "終了"
             finishButton.alpha = 0.2
             finishButton.isEnabled = false
         case .none:
-            statusLabel.text = "未参加"
             cancelButton.alpha = 0.2
             cancelButton.isEnabled = false
         }
     }
 
     @IBAction func didTapActivateButton(_ sender: Any) {
-        updatePlayerStatus(uuid: player.uuid!, status: PlayerStatus.active.rawValue) {
-            self.dismiss(animated: true, completion: nil)
-        }
+        callUpdatePlayerStatus(status: PlayerStatus.playing.rawValue)
     }
     
     @IBAction func didTapFinishButton(_ sender: Any) {
-        updatePlayerStatus(uuid: player.uuid!, status: PlayerStatus.finish.rawValue) {
-            self.dismiss(animated: true, completion: nil)
-        }
+        callUpdatePlayerStatus(status: PlayerStatus.finish.rawValue)
     }
     
     
     @IBAction func didTapCancelButton(_ sender: Any) {
-        updatePlayerStatus(uuid: player.uuid!, status: PlayerStatus.none.rawValue) {
-            self.dismiss(animated: true, completion: nil)
-        }
+        callUpdatePlayerStatus(status: PlayerStatus.none.rawValue)
     }
     
+    private func callUpdatePlayerStatus(status: String) {
+        updatePlayerStatus(uuid: player.uuid!, status: status) {
+            self.dismiss(animated: true) {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PlayerTableViewReload"), object: nil)
+            }
+        }
+    }
     
     private func updatePlayerStatus(uuid: String, status: String, completion: @escaping () -> Void) {
         API.Players.updatePlayer(uuid: uuid, status: status).response { result in
             switch result {
             case let .response(statusCode):
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
-                    completion()
-                }
+                completion()
             case let .error(error):
                 print("Error=\(error)")
             }

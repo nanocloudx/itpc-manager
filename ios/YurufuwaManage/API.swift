@@ -23,19 +23,19 @@ extension API {
             return "/api/events/example/players/"
         }
         
-        class func getPlayers() -> Task<String, Error> {
-            let task = Task<String, Error> { result in
+        class func getPlayers() -> Task<[Player], Error> {
+            let task = Task<[Player], Error> { result in
                 let url = URL(string: baseURL + path)!
                 var request = URLRequest(url: url)
                 request.httpMethod = "GET"
                 let session = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                     guard let data = data,
-                        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [AnyObject],
-                        let players = json?[0]["result"] as? String else {
+                        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
+                        let players = json as? [[String: String?]] else {
                             result(.error(ResponseError.unexceptedResponse(error as AnyObject)))
                             return
                     }
-                    result(.response(players))
+                    result(.response(Player.getPlayers(json: players)))
                 })
                 session.resume()
             }
@@ -84,7 +84,6 @@ extension API {
         class func updatePlayer(uuid: String, status: String) -> Task<Int, Error> {
             let task = Task<Int, Error> { result in
                 let url = URL(string: baseURL + path + uuid + "/" + status)!
-                print(url)
                 var request = URLRequest(url: url)
                 request.httpMethod = "PUT"
                 let session = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in

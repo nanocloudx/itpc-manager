@@ -93,7 +93,8 @@ router.post('/api/events/:eventId/players/:playerId', async (req, res, next) => 
   const results = await models.EventPlayerRelation.create({
     id: uuidv4(),
     EventId: req.params.eventId,
-    PlayerId: req.params.playerId
+    PlayerId: req.params.playerId,
+    status: 'none'
   })
   databaseResponse(results, res)
 })
@@ -110,9 +111,12 @@ router.get('/api/events/:eventId/players/:playerId', async (req, res, next) => {
     }],
     where: { id: req.params.eventId }
   })
+  if (!results) {
+    return failureResponse(res)
+  }
   const player = {
     id: results.Players[0].id,
-      organization: results.Players[0].organization,
+    organization: results.Players[0].organization,
     name: results.Players[0].name,
     rank: results.Players[0].EventPlayerRelation.rank,
     status: results.Players[0].EventPlayerRelation.status

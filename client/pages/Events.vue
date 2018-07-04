@@ -13,10 +13,12 @@
       <h3>List</h3>
       <ul>
         <li v-for="event in events">
-          <span class="id">{{ event.id }}</span>
-          <span class="title">{{ event.title }}</span>
-          <span class="place">{{ event.place }}</span>
-          <span class="date">{{ event.date }}</span>
+          <router-link :to="{ name: 'Game', params: { eventId: event.id }}">
+            <span class="id">{{ event.id }}</span>
+            <span class="title">{{ event.title }}</span>
+            <span class="place">{{ event.place }}</span>
+            <span class="date">{{ event.date }}</span>
+          </router-link>
         </li>
       </ul>
     </div>

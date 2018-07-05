@@ -28,6 +28,10 @@ export default {
     header {
       display: none;
     }
+    .wrapper {
+      margin: 0;
+      padding: 0;
+    }
   }
   html, body {
     color: rgb(142, 146, 147);

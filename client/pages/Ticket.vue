@@ -43,21 +43,14 @@ export default {
 <style lang="scss" scoped>
   @page {
     size: 100mm 148mm;
+    margin: 0;
+    padding: 0;
+  }
+  @media print {
     width: 100mm;
     height: 148mm;
     margin: 0;
     padding: 0;
-    border: 0;
-  }
-  @media print {
-    body {
-      size: 100mm 148mm;
-      width: 100mm;
-      height: 148mm;
-      margin: 0;
-      padding: 0;
-      border: 0;
-    }
   }
   .hagaki {
     -webkit-print-color-adjust: exact;

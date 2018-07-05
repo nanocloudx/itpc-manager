@@ -24,6 +24,11 @@ export default {
   * {
     box-sizing: border-box;
   }
+  @media print {
+    header {
+      display: none;
+    }
+  }
   html, body {
     color: rgb(142, 146, 147);
     background-color: rgb(40, 40, 40);

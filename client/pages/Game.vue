@@ -28,6 +28,7 @@
         <li v-for="entry in registrations">
           <p class="organization">{{ entry.organization }}</p>
           <p class="name">{{ entry.name }}</p>
+          <p class="ticket"><router-link :to="{ name: 'Ticket', params: { eventId: event.id, entryId: entry.id }}">Ticket</router-link></p>
         </li>
       </ul>
     </div>
@@ -147,6 +148,11 @@ export default {
     &.prize {
       font-size: 2.2rem !important;
       color: #ffba00 !important;;
+    }
+    .ticket {
+      margin-left: 1rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
     }
   }
   .rank {

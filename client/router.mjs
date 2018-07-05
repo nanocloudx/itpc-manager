@@ -4,6 +4,7 @@ import Index from './pages/Index.vue'
 import Players from './pages/Players.vue'
 import Events from './pages/Events.vue'
 import Game from './pages/Game.vue'
+import Ticket from './pages/Ticket.vue'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ const router = new Router({
       path: '/events/:eventId',
       name: 'Game',
       component: Game
+    },
+    {
+      path: '/events/:eventId/entries/:entryId/ticket',
+      name: 'Ticket',
+      component: Ticket
     }
   ]
 })

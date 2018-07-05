@@ -55,7 +55,6 @@ export default {
         date: this.date,
       })
       fetch(url, { method, headers, body }).then(response => response.json()).then(result => {
-        console.log(result)
         alert('registration successful!')
       })
     }

@@ -12,10 +12,15 @@ class PlayerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var organizationLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        containerView.layer.masksToBounds = false
+        containerView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        containerView.layer.shadowRadius = 2
+        containerView.layer.shadowOpacity = 0.7
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

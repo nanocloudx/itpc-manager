@@ -16,10 +16,10 @@ enum PlayerStatus: String {
 
 struct Player {
     
-    var uuid: String?
-    var name: String?
-    var company: String?
-    var status: PlayerStatus?
+    var uuid: String!
+    var name: String!
+    var company: String!
+    var status: PlayerStatus!
     
     init(uuid: String, name: String, company: String, status: String) {
         self.uuid = uuid
@@ -28,16 +28,16 @@ struct Player {
         self.status = PlayerStatus(rawValue: status)
     }
     
-    init(json: [String: String?]) {
-        self.uuid = json["id"] ?? ""
-        self.name = json["name"] ?? ""
-        self.company = json["organization"] ?? ""
-        if let status = json["status"] {
-            self.status = PlayerStatus(rawValue: status ?? "")
+    init(json: [String: Any?]) {
+        self.uuid = json["id"] as? String
+        self.name = json["name"] as? String
+        self.company = json["organization"] as? String
+        if let status = json["status"] as? String {
+            self.status = PlayerStatus(rawValue: status)
         }
     }
     
-    static func getPlayers(json: [[String: String?]]) -> [Player] {
+    static func getPlayers(json: [[String: Any?]]) -> [Player] {
         var players: [Player] = []
         for j in json {
             players.append(Player.init(json: j))

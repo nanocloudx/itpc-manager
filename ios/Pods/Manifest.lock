@@ -1,16 +1,20 @@
 PODS:
   - Gryphon (3.1.0)
+  - JGProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - Gryphon (~> 3.1)
+  - JGProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Gryphon
+    - JGProgressHUD
 
 SPEC CHECKSUMS:
   Gryphon: 4be80ea5cd7f00421915ddce4e5c0e662ab5d5ff
+  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
 
-PODFILE CHECKSUM: 1b817e3bb5fda7592363c45562b71ad2b8ea6980
+PODFILE CHECKSUM: 6df386971cfc9a49e3f55d4b66e9299733a1facd
 
 COCOAPODS: 1.5.2

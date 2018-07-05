@@ -8,13 +8,15 @@
 
 import UIKit
 import AVFoundation
+import JGProgressHUD
 
-class ViewController: UIViewController {
+class EventDetailViewController: UIViewController {
 
     private let session = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer!
     private var player: Player?
     private var players: [PlayerStatus: [Player]] = [:]
+    private var event: Event!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,11 +28,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var statusChangeButton: UIButton!
     
+    
+    @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var eventDateLabel: UILabel!
+    @IBOutlet weak var eventPlaceLabel: UILabel!
+    
     private let playerStatus: [PlayerStatus] = [PlayerStatus.playing, PlayerStatus.finish, PlayerStatus.none]
+    
+    static func create(event: Event) -> EventDetailViewController {
+        let vc = UIStoryboard.init(name: "EventDetail", bundle: nil).instantiateInitialViewController() as! EventDetailViewController
+        vc.event = event
+        return vc
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareCamera()
+        
+        eventNameLabel.text = event.title
+        eventDateLabel.text = event.date
+        eventPlaceLabel.text = event.place
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +73,8 @@ class ViewController: UIViewController {
     }
 
     private func reloadPlayers() {
+        let hud = JGProgressHUD(style: .dark)
+        hud.show(in: view)
         getPlayers { players in
             self.players = [
                 PlayerStatus.playing: players.filter { $0.status == PlayerStatus.playing },
@@ -63,6 +82,7 @@ class ViewController: UIViewController {
                 PlayerStatus.none: players.filter { $0.status == PlayerStatus.none }
             ]
             DispatchQueue.main.async {
+                hud.dismiss()
                 self.tableView.reloadData()
             }
         }
@@ -112,6 +132,7 @@ class ViewController: UIViewController {
         API.Players.getPlayer(uuid: uuid).response { result in
             switch result {
             case let .response(player):
+                print(player)
                 completion(player)
             case let .error(error):
                 print(error)
@@ -124,6 +145,7 @@ class ViewController: UIViewController {
         API.Players.getPlayers().response { result in
             switch result {
             case let .response(players):
+                print(players)
                 completion(players)
             case let .error(error):
                 print(error)
@@ -142,16 +164,18 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: AVCaptureMetadataOutputObjectsDelegate {
+extension EventDetailViewController: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
             guard let uuid = metadata.stringValue, metadata.type == .qr else {
                 continue
             }
             
-            self.stopCameraSession()
+            let hud = JGProgressHUD(style: .dark)
+            hud.show(in: cameraView)
             getPlayerInfo(uuid: uuid) { player in
                 DispatchQueue.main.async {
+                    hud.dismiss()
                     self.stopCameraSession()
                     if let player = player {
                         self.present(StatusChangeViewController.create(player: player), animated: true, completion: nil)
@@ -162,7 +186,7 @@ extension ViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension EventDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return playerStatus.count
     }
@@ -185,6 +209,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return Player.getStatusString(status: playerStatus[section])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let players = players[playerStatus[indexPath.section]] {
+            let player = players[indexPath.row]
+            self.present(StatusChangeViewController.create(player: player), animated: true, completion: nil)
+        }
     }
 }
 

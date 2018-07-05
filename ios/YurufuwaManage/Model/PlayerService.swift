@@ -1,37 +1,37 @@
 //
-//  API.swift
+//  PlayerService.swift
 //  YurufuwaManage
 //
-//  Created by Minami Baba on 2018/07/03.
+//  Created by Minami Baba on 2018/07/05.
 //  Copyright © 2018年 Minami Baba. All rights reserved.
 //
 
 import Foundation
 import Gryphon
 
-final class API {
-}
-
 extension API {
     final class Players: Requestable {
-        
         static var baseURL: String {
-            return "http://192.168.0.2:3000"
+            return UserDefaults.standard.string(forKey: "baseURL") ?? ""
         }
         
         static var path: String {
-            return "/api/events/example/players/"
+            let eventID = UserDefaults.standard.string(forKey: "eventID") ?? ""
+            return "/api/events/\(eventID)/entries/"
         }
         
         class func getPlayers() -> Task<[Player], Error> {
             let task = Task<[Player], Error> { result in
-                let url = URL(string: baseURL + path)!
+                guard let url = URL(string: baseURL + path) else {
+                    return
+                }
+                print(url)
                 var request = URLRequest(url: url)
                 request.httpMethod = "GET"
                 let session = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                     guard let data = data,
                         let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
-                        let players = json as? [[String: String?]] else {
+                        let players = json as? [[String: Any?]] else {
                             result(.error(ResponseError.unexceptedResponse(error as AnyObject)))
                             return
                     }
@@ -44,15 +44,19 @@ extension API {
         
         class func getPlayer(uuid: String) -> Task<Player, Error> {
             let task = Task<Player, Error> { result in
-                let url = URL(string: baseURL + path + uuid)!
+                guard let url = URL(string: baseURL + path + uuid) else {
+                    return
+                }
+                print(url)
                 var request = URLRequest(url: url)
+                print(url)
                 request.httpMethod = "GET"
                 let session = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                     guard let data = data,
-                    let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
-                    let player = json as? [String: String?] else {
-                        result(.error(ResponseError.unexceptedResponse(error as AnyObject)))
-                        return
+                        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
+                        let player = json as? [String: String?] else {
+                            result(.error(ResponseError.unexceptedResponse(error as AnyObject)))
+                            return
                     }
                     result(.response(Player.init(json: player)))
                 })
@@ -61,29 +65,12 @@ extension API {
             return task
         }
         
-        class func getToken() -> Task<String, Error> {
-            let task = Task<String, Error> { result in
-                let url = URL(string: baseURL + "/api/token")!
-                var request = URLRequest(url: url)
-                request.httpMethod = "GET"
-                let session = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-                    guard let data = data,
-                    let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: String] else {
-                            result(.error(ResponseError.unexceptedResponse(error as AnyObject)))
-                            return
-                    }
-                    result(.response(json!["token"]!))
-                })
-                session.resume()
-            }
-            return task
-        }
-        
-        
-        //status : playing/finish/none
         class func updatePlayer(uuid: String, status: String) -> Task<Int, Error> {
             let task = Task<Int, Error> { result in
-                let url = URL(string: baseURL + path + uuid + "/" + status)!
+                guard let url = URL(string: baseURL + path + uuid + "/" + status) else {
+                    return
+                }
+                print(url)
                 var request = URLRequest(url: url)
                 request.httpMethod = "PUT"
                 let session = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in

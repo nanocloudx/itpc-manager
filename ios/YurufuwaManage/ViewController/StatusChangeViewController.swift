@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class StatusChangeViewController: UIViewController {
 
@@ -32,9 +33,9 @@ class StatusChangeViewController: UIViewController {
         organizationLabel.text = player.company
         nameLabel.text = player.name
         
-        statusLabel.text = Player.getStatusString(status: player.status!)
+        statusLabel.text = Player.getStatusString(status: player.status)
         
-        switch player.status! {
+        switch player.status {
         case .playing:
             activateButton.alpha = 0.2
             activateButton.isEnabled = false
@@ -44,6 +45,8 @@ class StatusChangeViewController: UIViewController {
         case .none:
             cancelButton.alpha = 0.2
             cancelButton.isEnabled = false
+        case .some(_):
+            break
         }
     }
 
@@ -64,20 +67,30 @@ class StatusChangeViewController: UIViewController {
         dismiss(animated: true, completion: {})
     }
     private func callUpdatePlayerStatus(status: String) {
-        updatePlayerStatus(uuid: player.uuid!, status: status) {
-            self.dismiss(animated: true) {
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PlayerTableViewReload"), object: nil)
+        guard let uuid = player.uuid else {
+            return
+        }
+        let hud = JGProgressHUD(style: .dark)
+        hud.show(in: view)
+        updatePlayerStatus(uuid: uuid, status: status) { success in
+            hud.dismiss()
+            if success {
+                self.dismiss(animated: true) {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PlayerTableViewReload"), object: nil)
+                }
             }
         }
     }
     
-    private func updatePlayerStatus(uuid: String, status: String, completion: @escaping () -> Void) {
+    private func updatePlayerStatus(uuid: String, status: String, completion: @escaping (Bool) -> Void) {
         API.Players.updatePlayer(uuid: uuid, status: status).response { result in
             switch result {
             case let .response(statusCode):
-                completion()
+                print(statusCode)
+                completion(true)
             case let .error(error):
-                print("Error=\(error)")
+                print(error)
+                completion(false)
             }
         }
     }

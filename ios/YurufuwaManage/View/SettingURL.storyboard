@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sjd-Sx-vFV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setting URL View Controller-->
+        <scene sceneID="s7e-rK-T9a">
+            <objects>
+                <viewController id="sjd-Sx-vFV" customClass="SettingURLViewController" customModule="YurufuwaManage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G8K-Cs-sXz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="casino_gate" translatesAutoresizingMaskIntoConstraints="NO" id="H6k-jz-SMr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGS-Bd-F4P">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="http://192.168.0.2:3000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-zh-Gfc">
+                                <rect key="frame" x="16" y="211" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="awE-Bs-WdO"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                <connections>
+                                    <outlet property="delegate" destination="sjd-Sx-vFV" id="Aqs-2G-LlK"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="接続先URLを入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzJ-ie-xFq">
+                                <rect key="frame" x="67" y="180" width="241" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cya-2o-rYy">
+                                <rect key="frame" x="142" y="275" width="90" height="45"/>
+                                <color key="backgroundColor" red="0.78039215689999997" green="0.14117647059999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="MtR-hg-Yt1"/>
+                                    <constraint firstAttribute="height" constant="45" id="SAT-ZI-8oL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="接続">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapConnectButton:" destination="sjd-Sx-vFV" eventType="touchUpInside" id="OXK-XL-PNu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hCf-Uj-Zvj" firstAttribute="trailing" secondItem="H6k-jz-SMr" secondAttribute="trailing" id="1dD-Ze-gRs"/>
+                            <constraint firstItem="zzJ-ie-xFq" firstAttribute="top" secondItem="hCf-Uj-Zvj" secondAttribute="top" constant="160" id="GTD-Dj-bK9"/>
+                            <constraint firstItem="zzJ-ie-xFq" firstAttribute="centerX" secondItem="G8K-Cs-sXz" secondAttribute="centerX" id="Gdy-bW-ina"/>
+                            <constraint firstItem="H6k-jz-SMr" firstAttribute="leading" secondItem="hCf-Uj-Zvj" secondAttribute="leading" id="JMV-Vn-tdt"/>
+                            <constraint firstItem="cya-2o-rYy" firstAttribute="centerX" secondItem="G8K-Cs-sXz" secondAttribute="centerX" id="LMh-mm-3v5"/>
+                            <constraint firstItem="hCf-Uj-Zvj" firstAttribute="bottom" secondItem="H6k-jz-SMr" secondAttribute="bottom" id="LpH-v0-VW4"/>
+                            <constraint firstItem="hCf-Uj-Zvj" firstAttribute="trailing" secondItem="OGS-Bd-F4P" secondAttribute="trailing" id="PdS-an-jJW"/>
+                            <constraint firstItem="hCf-Uj-Zvj" firstAttribute="bottom" secondItem="OGS-Bd-F4P" secondAttribute="bottom" id="UXx-lW-tv0"/>
+                            <constraint firstItem="OGS-Bd-F4P" firstAttribute="top" secondItem="hCf-Uj-Zvj" secondAttribute="top" id="aKp-o7-3Un"/>
+                            <constraint firstItem="cya-2o-rYy" firstAttribute="top" secondItem="Ndd-zh-Gfc" secondAttribute="bottom" constant="20" id="chf-Pm-Q33"/>
+                            <constraint firstItem="hCf-Uj-Zvj" firstAttribute="trailing" secondItem="Ndd-zh-Gfc" secondAttribute="trailing" constant="16" id="fOy-Dr-mOx"/>
+                            <constraint firstItem="Ndd-zh-Gfc" firstAttribute="top" secondItem="zzJ-ie-xFq" secondAttribute="bottom" constant="10" id="gfB-bA-eLF"/>
+                            <constraint firstItem="OGS-Bd-F4P" firstAttribute="leading" secondItem="hCf-Uj-Zvj" secondAttribute="leading" id="hLG-K5-wwv"/>
+                            <constraint firstItem="Ndd-zh-Gfc" firstAttribute="leading" secondItem="hCf-Uj-Zvj" secondAttribute="leading" constant="16" id="iGK-wm-fYx"/>
+                            <constraint firstItem="Ndd-zh-Gfc" firstAttribute="centerX" secondItem="G8K-Cs-sXz" secondAttribute="centerX" id="iHE-AO-kFo"/>
+                            <constraint firstItem="H6k-jz-SMr" firstAttribute="top" secondItem="hCf-Uj-Zvj" secondAttribute="top" id="jcS-rL-dpN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hCf-Uj-Zvj"/>
+                    </view>
+                    <connections>
+                        <outlet property="urlTextField" destination="Ndd-zh-Gfc" id="xsU-FP-tyN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbJ-YM-8jN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="104"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="casino_gate" width="1024" height="680"/>
+    </resources>
+</document>

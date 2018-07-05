@@ -12,9 +12,17 @@
 		0652A89B20EA7A040068A756 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652A89A20EA7A040068A756 /* API.swift */; };
 		06572E4D20ED390F0037C4B8 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06572E4C20ED390F0037C4B8 /* PlayerTableViewCell.swift */; };
 		0679AE1E20EA731F009B60C5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0679AE1D20EA731F009B60C5 /* Player.swift */; };
+		06A70DA120EE5B6D006155A6 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A70DA020EE5B6D006155A6 /* PlayerService.swift */; };
+		06A70DA320EE5C25006155A6 /* SettingURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A70DA220EE5C25006155A6 /* SettingURLViewController.swift */; };
+		06A70DA820EE5C57006155A6 /* SettingURL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A70DA720EE5C57006155A6 /* SettingURL.storyboard */; };
+		06A70DAA20EE60BA006155A6 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A70DA920EE60BA006155A6 /* EventListViewController.swift */; };
+		06A70DAC20EE60C8006155A6 /* EventList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A70DAB20EE60C8006155A6 /* EventList.storyboard */; };
+		06A70DAE20EE6322006155A6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A70DAD20EE6322006155A6 /* Event.swift */; };
+		06A70DB020EE646E006155A6 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A70DAF20EE646E006155A6 /* EventTableViewCell.swift */; };
+		06A70DB220EE6EA6006155A6 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A70DB120EE6EA6006155A6 /* EventService.swift */; };
 		06EB280D20EA635000CBE6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB280C20EA635000CBE6FF /* AppDelegate.swift */; };
-		06EB280F20EA635000CBE6FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB280E20EA635000CBE6FF /* ViewController.swift */; };
-		06EB281220EA635000CBE6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EB281020EA635000CBE6FF /* Main.storyboard */; };
+		06EB280F20EA635000CBE6FF /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB280E20EA635000CBE6FF /* EventDetailViewController.swift */; };
+		06EB281220EA635000CBE6FF /* EventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EB281020EA635000CBE6FF /* EventDetail.storyboard */; };
 		06EB281420EA635100CBE6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EB281320EA635100CBE6FF /* Assets.xcassets */; };
 		06EB281720EA635100CBE6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EB281520EA635100CBE6FF /* LaunchScreen.storyboard */; };
 		06EB282220EA635100CBE6FF /* YurufuwaManageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EB282120EA635100CBE6FF /* YurufuwaManageTests.swift */; };
@@ -47,10 +55,18 @@
 		0652A89A20EA7A040068A756 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		06572E4C20ED390F0037C4B8 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		0679AE1D20EA731F009B60C5 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		06A70DA020EE5B6D006155A6 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		06A70DA220EE5C25006155A6 /* SettingURLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingURLViewController.swift; sourceTree = "<group>"; };
+		06A70DA720EE5C57006155A6 /* SettingURL.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingURL.storyboard; sourceTree = "<group>"; };
+		06A70DA920EE60BA006155A6 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		06A70DAB20EE60C8006155A6 /* EventList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventList.storyboard; sourceTree = "<group>"; };
+		06A70DAD20EE6322006155A6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		06A70DAF20EE646E006155A6 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		06A70DB120EE6EA6006155A6 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		06EB280920EA635000CBE6FF /* YurufuwaManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YurufuwaManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EB280C20EA635000CBE6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		06EB280E20EA635000CBE6FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		06EB281120EA635000CBE6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06EB280E20EA635000CBE6FF /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		06EB281120EA635000CBE6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EventDetail.storyboard; sourceTree = "<group>"; };
 		06EB281320EA635100CBE6FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06EB281620EA635100CBE6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06EB281820EA635100CBE6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +115,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06A70DA420EE5C31006155A6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06A70DA220EE5C25006155A6 /* SettingURLViewController.swift */,
+				06A70DA920EE60BA006155A6 /* EventListViewController.swift */,
+				06EB280E20EA635000CBE6FF /* EventDetailViewController.swift */,
+				0634163820ED09CA006EB1F5 /* StatusChangeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		06A70DA520EE5C3C006155A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0652A89A20EA7A040068A756 /* API.swift */,
+				06A70DA020EE5B6D006155A6 /* PlayerService.swift */,
+				06A70DB120EE6EA6006155A6 /* EventService.swift */,
+				0679AE1D20EA731F009B60C5 /* Player.swift */,
+				06A70DAD20EE6322006155A6 /* Event.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		06A70DA620EE5C44006155A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				06572E4C20ED390F0037C4B8 /* PlayerTableViewCell.swift */,
+				06A70DAF20EE646E006155A6 /* EventTableViewCell.swift */,
+				06EB281020EA635000CBE6FF /* EventDetail.storyboard */,
+				0634163A20ED09D2006EB1F5 /* StatusChange.storyboard */,
+				06A70DA720EE5C57006155A6 /* SettingURL.storyboard */,
+				06A70DAB20EE60C8006155A6 /* EventList.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		06EB280020EA635000CBE6FF = {
 			isa = PBXGroup;
 			children = (
@@ -125,13 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				06EB280C20EA635000CBE6FF /* AppDelegate.swift */,
-				06EB280E20EA635000CBE6FF /* ViewController.swift */,
-				06572E4C20ED390F0037C4B8 /* PlayerTableViewCell.swift */,
-				0634163820ED09CA006EB1F5 /* StatusChangeViewController.swift */,
-				0652A89A20EA7A040068A756 /* API.swift */,
-				0679AE1D20EA731F009B60C5 /* Player.swift */,
-				06EB281020EA635000CBE6FF /* Main.storyboard */,
-				0634163A20ED09D2006EB1F5 /* StatusChange.storyboard */,
+				06A70DA420EE5C31006155A6 /* ViewController */,
+				06A70DA620EE5C44006155A6 /* View */,
+				06A70DA520EE5C3C006155A6 /* Model */,
 				06EB281320EA635100CBE6FF /* Assets.xcassets */,
 				06EB281520EA635100CBE6FF /* LaunchScreen.storyboard */,
 				06EB281820EA635100CBE6FF /* Info.plist */,
@@ -290,8 +338,10 @@
 			files = (
 				0634163B20ED09D2006EB1F5 /* StatusChange.storyboard in Resources */,
 				06EB281720EA635100CBE6FF /* LaunchScreen.storyboard in Resources */,
+				06A70DAC20EE60C8006155A6 /* EventList.storyboard in Resources */,
+				06A70DA820EE5C57006155A6 /* SettingURL.storyboard in Resources */,
 				06EB281420EA635100CBE6FF /* Assets.xcassets in Resources */,
-				06EB281220EA635000CBE6FF /* Main.storyboard in Resources */,
+				06EB281220EA635000CBE6FF /* EventDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,10 +370,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YurufuwaManage/Pods-YurufuwaManage-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Gryphon/Gryphon.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gryphon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -391,9 +443,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A70DB220EE6EA6006155A6 /* EventService.swift in Sources */,
 				06572E4D20ED390F0037C4B8 /* PlayerTableViewCell.swift in Sources */,
-				06EB280F20EA635000CBE6FF /* ViewController.swift in Sources */,
+				06A70DB020EE646E006155A6 /* EventTableViewCell.swift in Sources */,
+				06A70DA320EE5C25006155A6 /* SettingURLViewController.swift in Sources */,
+				06A70DA120EE5B6D006155A6 /* PlayerService.swift in Sources */,
+				06EB280F20EA635000CBE6FF /* EventDetailViewController.swift in Sources */,
+				06A70DAE20EE6322006155A6 /* Event.swift in Sources */,
 				0679AE1E20EA731F009B60C5 /* Player.swift in Sources */,
+				06A70DAA20EE60BA006155A6 /* EventListViewController.swift in Sources */,
 				0652A89B20EA7A040068A756 /* API.swift in Sources */,
 				0634163920ED09CA006EB1F5 /* StatusChangeViewController.swift in Sources */,
 				06EB280D20EA635000CBE6FF /* AppDelegate.swift in Sources */,
@@ -432,12 +490,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		06EB281020EA635000CBE6FF /* Main.storyboard */ = {
+		06EB281020EA635000CBE6FF /* EventDetail.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				06EB281120EA635000CBE6FF /* Base */,
 			);
-			name = Main.storyboard;
+			name = EventDetail.storyboard;
 			sourceTree = "<group>";
 		};
 		06EB281520EA635100CBE6FF /* LaunchScreen.storyboard */ = {

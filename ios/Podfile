@@ -7,7 +7,7 @@ target 'YurufuwaManage' do
 
   # Pods for YurufuwaManage
   pod 'Gryphon', '~> 3.1'
-
+  pod 'JGProgressHUD'
   target 'YurufuwaManageTests' do
     inherit! :search_paths
     # Pods for testing

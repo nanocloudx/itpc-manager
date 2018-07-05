@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.UUID
       },
-      rank: {
+      finishTime: {
         type: Sequelize.INTEGER
       },
       status: {

@@ -14,7 +14,6 @@
       <h3>Entries</h3>
       <ul>
         <li v-for="entry in entries">
-          <span class="rank">{{ entry.rank }}</span>
           <span class="organization">{{ entry.organization }}</span>
           <span class="name">{{ entry.name }}</span>
           <span class="status">{{ entry.status }}</span>
@@ -36,25 +35,27 @@ export default {
   beforeMount () {
     this.fetchPlayers()
     this.fetchEntries()
-    // setInterval(() => {
-    //   this.fetchEntries()
-    // }, 5 * 1000)
   },
   methods: {
     fetchPlayers() {
       fetch(`/api/players`).then(response => response.json()).then(results => this.players = results)
     },
     fetchEntries() {
-      fetch(`/api/events/${this.$route.params.eventId}/players`).then(response => response.json()).then(results => this.entries = results)
+      fetch(`/api/events/${this.$route.params.eventId}/entries`)
+        .then(response => response.json())
+        .then(results => this.entries = results)
     },
     onClickRegister() {
-      const url = `/api/events/${this.$route.params.eventId}/players/${this.selectedPlayerId}/`
+      const url = `/api/events/${this.$route.params.eventId}/entries/`
       const method = 'post'
       const headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-      fetch(url, { method, headers }).then(response => response.json()).then(result => {
+      const body = JSON.stringify({
+        playerId: this.selectedPlayerId
+      })
+      fetch(url, { method, headers, body }).then(response => response.json()).then(result => {
         this.fetchEntries()
         alert('registration successful!')
       })

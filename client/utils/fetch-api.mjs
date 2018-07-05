@@ -10,7 +10,8 @@ export default (url, methods = 'get', body = {}) => {
 }
 
 function request (url, methods, body) {
-  const token = document.head.children['csrf-token'].content
+  const token = ''
+  // const token = document.head.children['csrf-token'].content
   switch (methods.toLowerCase()) {
     case 'get':
       return fetch(url, {

@@ -17,7 +17,10 @@ router.get('/api/check', async (req, res, next) => {
  * イベント一覧
  */
 router.get('/api/events', async (req, res, next) => {
-  const results = await models.Event.findAll({ attributes: { exclude: ['createdAt', 'updatedAt'] } })
+  const results = await models.Event.findAll({ attributes: { exclude: ['createdAt', 'updatedAt'] } }).catch(err => {})
+  if (!results) {
+    return failureResponse(res)
+  }
   databaseResponse(results, res)
 })
 
@@ -25,7 +28,10 @@ router.get('/api/events', async (req, res, next) => {
  * イベント情報
  */
 router.get('/api/events/:eventId', async (req, res, next) => {
-  const results = await models.Event.findById(req.params.eventId, { attributes: { exclude: ['createdAt', 'updatedAt'] } })
+  const results = await models.Event.findById(req.params.eventId, { attributes: { exclude: ['createdAt', 'updatedAt'] } }).catch(err => {})
+  if (!results) {
+    return failureResponse(res)
+  }
   databaseResponse(results, res)
 })
 
@@ -38,7 +44,10 @@ router.post('/api/events', async (req, res, next) => {
     title: req.body.title,
     place: req.body.place,
     date: req.body.date
-  })
+  }).catch(err => {})
+  if (!results) {
+    return failureResponse(res)
+  }
   databaseResponse(results, res)
 })
 
@@ -54,7 +63,10 @@ router.get('/api/players', async (req, res, next) => {
  * プレーヤー情報
  */
 router.get('/api/players/:playerId', async (req, res, next) => {
-  const results = await models.Player.findById(req.params.playerId, { attributes: { exclude: ['createdAt', 'updatedAt'] } })
+  const results = await models.Player.findById(req.params.playerId, { attributes: { exclude: ['createdAt', 'updatedAt'] } }).catch(err => {})
+  if (!results) {
+    return failureResponse(res)
+  }
   databaseResponse(results, res)
 })
 
@@ -66,7 +78,10 @@ router.post('/api/players', async (req, res, next) => {
     id: uuidv4(),
     organization: req.body.organization,
     name: req.body.name
-  })
+  }).catch(err => {})
+  if (!results) {
+    return failureResponse(res)
+  }
   databaseResponse(results, res)
 })
 
@@ -77,10 +92,10 @@ router.get('/api/events/:eventId/entries', async (req, res, next) => {
   const results = await models.Event.findOne({
     include: [{
       model: models.Player,
-      through: { attributes: ['rank', 'status'] }
+      through: { attributes: ['finishTime', 'status'] }
     }],
     where: { id: req.params.eventId }
-  })
+  }).catch(err => {})
   if (!results) {
     return failureResponse(res)
   }
@@ -89,7 +104,7 @@ router.get('/api/events/:eventId/entries', async (req, res, next) => {
       id: player.id,
       organization: player.organization,
       name: player.name,
-      rank: player.Entries.rank,
+      finishTime: player.Entries.finishTime,
       status: player.Entries.status
     }
   })
@@ -105,7 +120,10 @@ router.post('/api/events/:eventId/entries', async (req, res, next) => {
     EventId: req.params.eventId,
     PlayerId: req.body.playerId,
     status: 'none'
-  })
+  }).catch(err => {})
+  if (!results) {
+    return failureResponse(res)
+  }
   databaseResponse(results, res)
 })
 
@@ -113,16 +131,21 @@ router.post('/api/events/:eventId/entries', async (req, res, next) => {
  * イベント参加情報
  */
 router.get('/api/events/:eventId/entries/:entryId', async (req, res, next) => {
+
+  const check = await models.Entries.findById(req.params.entryId).catch(err => {})
+  if (!check) {
+    return failureResponse(res)
+  }
   const results = await models.Event.findOne({
     include: [{
       model: models.Player,
       through: {
         where: { id: req.params.entryId },
-        attributes: ['rank', 'status']
+        attributes: ['finishTime', 'status']
       }
     }],
     where: { id: req.params.eventId }
-  })
+  }).catch(err => {})
   if (!results) {
     return failureResponse(res)
   }
@@ -130,7 +153,7 @@ router.get('/api/events/:eventId/entries/:entryId', async (req, res, next) => {
     id: results.Players[0].id,
     organization: results.Players[0].organization,
     name: results.Players[0].name,
-    rank: results.Players[0].Entries.rank,
+    finishTime: results.Players[0].Entries.finishTime,
     status: results.Players[0].Entries.status
   }
   databaseResponse(player, res)
@@ -140,12 +163,18 @@ router.get('/api/events/:eventId/entries/:entryId', async (req, res, next) => {
  * ゲーム開始
  */
 router.put('/api/events/:eventId/entries/:entryId/playing', async (req, res, next) => {
-  const result = await models.Entries.update({ status: 'playing' }, {
+  const results = await models.Entries.update({
+    status: 'playing',
+    finishTime: null
+  }, {
     where: {
       id: req.params.entryId
     }
-  })
-  if (result[0] === 0) {
+  }).catch(err => {})
+  if (!results) {
+    return failureResponse(res)
+  }
+  if (results[0] === 0) {
     return failureResponse(res)
   }
   successResponse(res)
@@ -155,12 +184,18 @@ router.put('/api/events/:eventId/entries/:entryId/playing', async (req, res, nex
  * ゲーム終了
  */
 router.put('/api/events/:eventId/entries/:entryId/finish', async (req, res, next) => {
-  const result = await models.Entries.update({ status: 'finish' }, {
+  const results = await models.Entries.update({
+    status: 'finish',
+    finishTime: Math.floor(new Date().getTime() / 1000)
+  }, {
     where: {
       id: req.params.entryId
     }
-  })
-  if (result[0] === 0) {
+  }).catch(err => {})
+  if (!results) {
+    return failureResponse(res)
+  }
+  if (results[0] === 0) {
     return failureResponse(res)
   }
   successResponse(res)
@@ -170,11 +205,17 @@ router.put('/api/events/:eventId/entries/:entryId/finish', async (req, res, next
  * ゲーム未参加
  */
 router.put('/api/events/:eventId/entries/:entryId/none', async (req, res, next) => {
-  const result = await models.Entries.update({ status: 'none' }, {
+  const results = await models.Entries.update({
+    status: 'none',
+    finishTime: null
+  }, {
     where: {
       id: req.params.entryId
     }
-  })
+  }).catch(err => {})
+  if (!results) {
+    return failureResponse(res)
+  }
   if (result[0] === 0) {
     return failureResponse(res)
   }

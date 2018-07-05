@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true
     },
-    rank: DataTypes.INTEGER,
+    finishTime: DataTypes.INTEGER,
     status: DataTypes.STRING
   }, {});
   Entries.associate = function(models) {

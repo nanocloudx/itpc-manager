@@ -33,20 +33,19 @@ class StatusChangeViewController: UIViewController {
         organizationLabel.text = player.company
         nameLabel.text = player.name
         
-        statusLabel.text = Player.getStatusString(status: player.status)
-        
-        switch player.status {
-        case .playing:
-            activateButton.alpha = 0.2
-            activateButton.isEnabled = false
-        case .finish:
-            finishButton.alpha = 0.2
-            finishButton.isEnabled = false
-        case .none:
-            cancelButton.alpha = 0.2
-            cancelButton.isEnabled = false
-        case .some(_):
-            break
+        if let status = player.status {
+            statusLabel.text = Player.getStatusString(status: status)
+            switch status {
+            case .playing:
+                activateButton.alpha = 0.2
+                activateButton.isEnabled = false
+            case .finish:
+                finishButton.alpha = 0.2
+                finishButton.isEnabled = false
+            case .none:
+                cancelButton.alpha = 0.2
+                cancelButton.isEnabled = false
+            }
         }
     }
 

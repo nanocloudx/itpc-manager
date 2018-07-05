@@ -19,7 +19,7 @@ struct Player {
     var uuid: String!
     var name: String!
     var company: String!
-    var status: PlayerStatus!
+    var status: PlayerStatus?
     
     init(uuid: String, name: String, company: String, status: String) {
         self.uuid = uuid

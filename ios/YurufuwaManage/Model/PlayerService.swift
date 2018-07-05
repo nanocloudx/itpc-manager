@@ -58,7 +58,11 @@ extension API {
                             result(.error(ResponseError.unexceptedResponse(error as AnyObject)))
                             return
                     }
-                    result(.response(Player.init(json: player)))
+                    if player["error"] != nil {
+                        result(.error(ResponseError.unacceptableStatusCode(404)))
+                    } else {
+                        result(.response(Player.init(json: player)))
+                    }
                 })
                 session.resume()
             }

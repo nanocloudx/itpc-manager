@@ -171,12 +171,12 @@ extension EventDetailViewController: AVCaptureMetadataOutputObjectsDelegate {
                 continue
             }
             
+            self.stopCameraSession()
             let hud = JGProgressHUD(style: .dark)
-            hud.show(in: cameraView)
+            hud.show(in:view)
             getPlayerInfo(uuid: uuid) { player in
                 DispatchQueue.main.async {
                     hud.dismiss()
-                    self.stopCameraSession()
                     if let player = player {
                         self.present(StatusChangeViewController.create(player: player), animated: true, completion: nil)
                     } else {

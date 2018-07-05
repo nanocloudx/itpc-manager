@@ -7,6 +7,13 @@ const router = express.Router()
 // TODO エラーハンドリング書いてないので暇な時にちゃんと直す
 
 /**
+ * API疎通確認
+ */
+router.get('/api/check', async (req, res, next) => {
+  successResponse(res)
+})
+
+/**
  * イベント一覧
  */
 router.get('/api/events', async (req, res, next) => {
@@ -66,7 +73,7 @@ router.post('/api/players', async (req, res, next) => {
 /**
  * イベント参加者一覧
  */
-router.get('/api/events/:eventId/players', async (req, res, next) => {
+router.get('/api/events/:eventId/entries', async (req, res, next) => {
   const results = await models.Event.findOne({
     include: [{
       model: models.Player,
@@ -74,13 +81,16 @@ router.get('/api/events/:eventId/players', async (req, res, next) => {
     }],
     where: { id: req.params.eventId }
   })
+  if (!results) {
+    return failureResponse(res)
+  }
   const players = results.Players.map(player => {
     return {
       id: player.id,
       organization: player.organization,
       name: player.name,
-      rank: player.EventPlayerRelation.rank,
-      status: player.EventPlayerRelation.status
+      rank: player.Entries.rank,
+      status: player.Entries.status
     }
   })
   databaseResponse(players, res)
@@ -89,11 +99,11 @@ router.get('/api/events/:eventId/players', async (req, res, next) => {
 /**
  * イベント参加登録
  */
-router.post('/api/events/:eventId/players/:playerId', async (req, res, next) => {
-  const results = await models.EventPlayerRelation.create({
+router.post('/api/events/:eventId/entries', async (req, res, next) => {
+  const results = await models.Entries.create({
     id: uuidv4(),
     EventId: req.params.eventId,
-    PlayerId: req.params.playerId,
+    PlayerId: req.body.playerId,
     status: 'none'
   })
   databaseResponse(results, res)
@@ -102,12 +112,14 @@ router.post('/api/events/:eventId/players/:playerId', async (req, res, next) => 
 /**
  * イベント参加情報
  */
-router.get('/api/events/:eventId/players/:playerId', async (req, res, next) => {
+router.get('/api/events/:eventId/entries/:entryId', async (req, res, next) => {
   const results = await models.Event.findOne({
     include: [{
       model: models.Player,
-      through: { attributes: ['rank', 'status'] },
-      where: { id: req.params.playerId }
+      through: {
+        where: { id: req.params.entryId },
+        attributes: ['rank', 'status']
+      }
     }],
     where: { id: req.params.eventId }
   })
@@ -118,8 +130,8 @@ router.get('/api/events/:eventId/players/:playerId', async (req, res, next) => {
     id: results.Players[0].id,
     organization: results.Players[0].organization,
     name: results.Players[0].name,
-    rank: results.Players[0].EventPlayerRelation.rank,
-    status: results.Players[0].EventPlayerRelation.status
+    rank: results.Players[0].Entries.rank,
+    status: results.Players[0].Entries.status
   }
   databaseResponse(player, res)
 })
@@ -127,11 +139,10 @@ router.get('/api/events/:eventId/players/:playerId', async (req, res, next) => {
 /**
  * ゲーム開始
  */
-router.put('/api/events/:eventId/players/:playerId/playing', async (req, res, next) => {
-  const result = await models.EventPlayerRelation.update({ status: 'playing' }, {
+router.put('/api/events/:eventId/entries/:entryId/playing', async (req, res, next) => {
+  const result = await models.Entries.update({ status: 'playing' }, {
     where: {
-      EventId: req.params.eventId,
-      PlayerId: req.params.playerId
+      id: req.params.entryId
     }
   })
   if (result[0] === 0) {
@@ -143,11 +154,10 @@ router.put('/api/events/:eventId/players/:playerId/playing', async (req, res, ne
 /**
  * ゲーム終了
  */
-router.put('/api/events/:eventId/players/:playerId/finish', async (req, res, next) => {
-  const result = await models.EventPlayerRelation.update({ status: 'finish' }, {
+router.put('/api/events/:eventId/entries/:entryId/finish', async (req, res, next) => {
+  const result = await models.Entries.update({ status: 'finish' }, {
     where: {
-      EventId: req.params.eventId,
-      PlayerId: req.params.playerId
+      id: req.params.entryId
     }
   })
   if (result[0] === 0) {
@@ -159,11 +169,10 @@ router.put('/api/events/:eventId/players/:playerId/finish', async (req, res, nex
 /**
  * ゲーム未参加
  */
-router.put('/api/events/:eventId/players/:playerId/none', async (req, res, next) => {
-  const result = await models.EventPlayerRelation.update({ status: 'none' }, {
+router.put('/api/events/:eventId/entries/:entryId/none', async (req, res, next) => {
+  const result = await models.Entries.update({ status: 'none' }, {
     where: {
-      EventId: req.params.eventId,
-      PlayerId: req.params.playerId
+      id: req.params.entryId
     }
   })
   if (result[0] === 0) {

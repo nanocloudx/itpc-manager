@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Event.associate = function(models) {
     // associations can be defined here
-    Event.belongsToMany(models.Player, { through: models.EventPlayerRelation });
+    Event.belongsToMany(models.Player, { through: models.Entries });
   };
   return Event;
 };

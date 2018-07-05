@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('EventPlayerRelations', {
+    return queryInterface.createTable('Entries', {
       id: {
         allowNull: false,
         defaultValue: Sequelize.UUIDV4,
@@ -43,13 +43,13 @@ module.exports = {
       }
     }).then(() =>
       queryInterface.addIndex(
-        'EventPlayerRelations',
+        'Entries',
         ['EventId', 'PlayerId'],
         { indicesType: 'UNIQUE' }
       )
     )
   },
   down: (queryInterface) => {
-    return queryInterface.dropTable('EventPlayerRelations')
+    return queryInterface.dropTable('Entries')
   }
 }

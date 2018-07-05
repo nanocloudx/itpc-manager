@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var EventPlayerRelation = sequelize.define('EventPlayerRelation', {
+  var Entries = sequelize.define('Entries', {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     rank: DataTypes.INTEGER,
     status: DataTypes.STRING
   }, {});
-  EventPlayerRelation.associate = function(models) {
+  Entries.associate = function(models) {
     // associations can be defined here
   };
-  return EventPlayerRelation;
+  return Entries;
 };

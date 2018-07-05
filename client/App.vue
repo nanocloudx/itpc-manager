@@ -27,7 +27,6 @@ export default {
   html, body {
     color: rgb(142, 146, 147);
     background-color: rgb(40, 40, 40);
-    min-width: 1200px;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
   }
   li {

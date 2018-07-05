@@ -92,7 +92,7 @@ router.get('/api/events/:eventId/entries', async (req, res, next) => {
   const results = await models.Event.findOne({
     include: [{
       model: models.Player,
-      through: { attributes: ['finishTime', 'status'] }
+      through: { attributes: ['id', 'finishTime', 'status'] }
     }],
     where: { id: req.params.eventId }
   }).catch(err => {})
@@ -101,7 +101,7 @@ router.get('/api/events/:eventId/entries', async (req, res, next) => {
   }
   const players = results.Players.map(player => {
     return {
-      id: player.id,
+      id: player.Entries.id,
       organization: player.organization,
       name: player.name,
       finishTime: player.Entries.finishTime,
@@ -141,7 +141,7 @@ router.get('/api/events/:eventId/entries/:entryId', async (req, res, next) => {
       model: models.Player,
       through: {
         where: { id: req.params.entryId },
-        attributes: ['finishTime', 'status']
+        attributes: ['id', 'finishTime', 'status']
       }
     }],
     where: { id: req.params.eventId }
@@ -150,7 +150,7 @@ router.get('/api/events/:eventId/entries/:entryId', async (req, res, next) => {
     return failureResponse(res)
   }
   const player = {
-    id: results.Players[0].id,
+    id: results.Players[0].Entries.id,
     organization: results.Players[0].organization,
     name: results.Players[0].name,
     finishTime: results.Players[0].Entries.finishTime,
@@ -216,7 +216,7 @@ router.put('/api/events/:eventId/entries/:entryId/none', async (req, res, next) 
   if (!results) {
     return failureResponse(res)
   }
-  if (result[0] === 0) {
+  if (results[0] === 0) {
     return failureResponse(res)
   }
   successResponse(res)

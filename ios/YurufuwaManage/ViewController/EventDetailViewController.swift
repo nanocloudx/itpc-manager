@@ -179,6 +179,11 @@ extension EventDetailViewController: AVCaptureMetadataOutputObjectsDelegate {
                     self.stopCameraSession()
                     if let player = player {
                         self.present(StatusChangeViewController.create(player: player), animated: true, completion: nil)
+                    } else {
+                        let alert = UIAlertController(title:"このUUIDは見つかりません", message: uuid, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: { alert in
+                        }))
+                        self.present(alert, animated: true, completion: nil)
                     }
                 }
             }
